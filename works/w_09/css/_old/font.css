@@ -1,0 +1,205 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#wrapper {
+	font-family: Arial, Helvetica, sans-serif; text-decoration: none; line-height: 150%; font-size:12px; color:#666; }
+
+
+#top {text-align: right; font-size:9px; color:#888;}
+#top a {color: #666;text-decoration: none;line-height: 180%;}
+#top a:hover {color: #333;font-weight: bold;}
+
+#left {font-size:11px;color:#a6a6a6;}
+#left a {color: #434343;text-decoration: none;line-height: 150%;}
+#left a:hover {color: #0d6865;}
+
+#primary_title-title{font-size:15px;color:#28962b;line-height:150%;font-weight: bold;}
+#primary_title-edit{ font-size:11px;color:#9e9e9e;line-height:130%;}
+#primary_title-edit a{ font-size:11px;color:#6a6a6a;line-height:130%;}
+#primary_title-edit a:hover{ font-size:11px;color:#373737;line-height:130%;}
+
+
+#primary {text-align: left;font-size:12px; color:#666;line-height: 160%;}
+#primary a {font-size:12px;color:#666;text-decoration: none}
+#primary a:hover {font-size:12px;color:#189491;font-weight: bold;}
+
+
+
+#footer_edit { 
+    color:#777777; 
+	font-size:11px; 
+	line-height: 150%;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;}
+#footer_md{ 
+    color:#a4a4a4; 
+	font-size:10px; 
+	line-height: 120%;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;}
+
+
+
+
+
+
+link-no:hover ,.link-no:visited ,.link-no:link
+{font-size: 9px; height:10px; color:#8b8d86; padding:1px; text-decoration: none; line-height: 130%;}
+.link-no:hover
+{font-size: 9px; height:10px; color:#0288ce; padding:1px; text-decoration: none; line-height: 130%;font-weight: bold;}
+
+link-gary-11:hover ,.link-gary-11:visited ,.link-gary-11:link
+{font-size: 11px; height:10px; color:#434343; padding:1px; text-decoration: none; line-height: 130%;}
+.link-gary-11:hover
+{font-size: 11px; height:10px; color:#434343; padding:1px; text-decoration: none; line-height: 130%;}
+
+link-gary-12:hover ,.link-gary-12:visited ,.link-gary-12:link
+{font-size: 12px; height:10px; color:#6e6e6e; padding:1px; text-decoration: none; line-height: 150%;}
+.link-gary-12:hover
+{font-size: 12px; height:10px; color:#189491; padding:1px; text-decoration: none; line-height: 150%;}
+
+link-gary-13:hover ,.link-gary-13:visited ,.link-gary-13:link
+{font-size: 13px; height:10px; color:#676767; padding:1px; text-decoration: none; line-height: 150%;}
+.link-gary-13:hover
+{font-size: 13px; height:10px; color:#01b9b2; padding:1px; text-decoration: none; line-height: 150%;}
+
+
+
+
+.font_11-garypx {font-size: 11px; color: #969696; line-height:130%;}
+.font_15-greenpx{font-size: 15px; color: #4d4d4d; line-height:150%;font-weight: bold;}
+.font_12-mainpx {font-size: 12px; color: #777777; line-height:150%;}
+.font_12-garypx {font-size: 12px; color: #b6b6b6; line-height:150%;}
+.font_12-gary-1px {font-size: 12px; color: #b2b2b2; line-height:130%;}
+
+.font_11-gray-1px {font-size: 10px; color: #4d4d4d; line-height:100%;font-weight: bold;}
+
+.font_13-garypx {font-size: 13px; color: #777777; line-height:150%;}
+.font_13-pinkpx {font-size: 13px; color: #c94b8a; line-height:170%;font-weight: bold;}
+.font_13-orgenpx{font-size: 13px; color: #ea9532; line-height:170%;font-weight: bold;}
+.font_13-greenpx{font-size: 13px; color: #6c9d21; line-height:170%;font-weight: bold;}
+.font_13-bluepx {font-size: 13px; color: #2e8fc2; line-height:170%;font-weight: bold;}
+.font_13-green-1px{font-size: 13px; color: #2f8b86; line-height:150%;font-weight: bold;}
+.font_13-blue-1px {font-size: 13px; color: #38b8c5; line-height:150%;font-weight: bold;}
+
+.font_15-redpx {font-size: 15px; color: #b00000; line-height:170%;font-weight: bold;}
+.font_15-pinkpx {font-size: 15px; color: #c94b8a; line-height:170%;font-weight: bold;}
+.font_15-greenpx{font-size: 15px; color: #2f757f; line-height:180%;font-weight: bold;}
+.font_15-bluepx{font-size: 15px; color: #146ebb; line-height:180%;font-weight: bold;}
+.font_15-blue-titlepx{font-size: 15px; color: #31798e; line-height:180%;font-weight: bold;}
+.font_15-graypx{font-size: 15px; color: #4d4d4d; line-height:150%;font-weight: bold;}
+
+.font_15-green-titlepx{font-size: 15px; color: #1c7a22; line-height:180%;font-weight: bold;}
+
+
+
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/* 區塊按鈕 */
+
+#btn_login {display: block; width: 66px; height: 43px;background: url(../images/btn_login.png) no-repeat 0px 0px;} 
+#btn_login a {display: block; width: 66px; height: 43px;}
+#btn_login a:hover { display: block; width: 66px; height: 43px;background: url(../images/btn_login.png) no-repeat 0px -43px}
+
+#btn_search {display: block; width: 66px; height: 16px;background: url(../images/btn_search.gif) no-repeat 0px 0px;} 
+#btn_search a {display: block; width: 66px; height: 16px;}
+#btn_search a:hover { display: block; width: 66px; height: 16px;background: url(../images/btn_search.gif) no-repeat 0px -16px}
+
+#btn_detail {display: block; width: 101px; height: 31px;background: url(../images/btn_detail.png) no-repeat 0px 0px;} 
+#btn_detail a {display: block; width: 101px; height: 31px;}
+#btn_detail a:hover { display: block; width: 101px; height: 31px;background: url(../images/btn_detail.png) no-repeat 0px -31px}
+
+#btn_buy {display: block; width: 146px; height: 39px;background: url(../images/btn_buy.png) no-repeat 0px 0px;} 
+#btn_buy a {display: block; width: 146px; height: 39px;}
+#btn_buy a:hover { display: block; width: 146px; height: 39px;background: url(../images/btn_buy.png) no-repeat 0px -39px}
+
+#btn_tips {display: block; width: 205px; height: 46px;background: url(../images/btn_tips.png) no-repeat 0px 0px;} 
+#btn_tips a {display: block; width: 205px; height: 46px;}
+#btn_tips a:hover { display: block; width: 205px; height: 46px;background: url(../images/btn_tips.png) no-repeat 0px -46px}
+
+#btn_more {display: block; width: 35px; height: 9px;background: url(../images/btn_more.gif) no-repeat 0px 0px;} 
+#btn_more a {display: block; width: 35px; height: 9px;}
+#btn_more a:hover { display: block; width: 35px; height: 8px;background: url(../images/btn_more.gif) no-repeat 0px -9px}
+
+
+
+#btn_backhom {display: block; width: 55px; height: 19px;background: url(../images/button_backhome.gif) no-repeat 0px 0px;} 
+#btn_backhom a {display: block; width: 55px; height: 19px;}
+#btn_backhom a:hover { display: block; width: 55px; height: 19px;background: url(../images/button_backhome.gif) no-repeat 0px -19px}
+
+#btn_next {display: block; width: 55px; height: 19px;background: url(../images/button_next.gif) no-repeat 0px 0px;} 
+#btn_next a {display: block; width: 55px; height: 19px;}
+#btn_next a:hover { display: block; width: 55px; height: 19px;background: url(../images/button_next.gif) no-repeat 0px -19px}
+
+#btn_previous {display: block; width: 55px; height: 19px;background: url(../images/button_previous.gif) no-repeat 0px 0px;} 
+#btn_previous a {display: block; width: 55px; height: 19px;}
+#btn_previous a:hover { display: block; width: 55px; height: 19px;background: url(../images/button_previous.gif) no-repeat 0px -19px}
+
+#btn_send {display: block; width: 78px; height: 19px;background: url(../images/button_send.gif) no-repeat 0px 0px;} 
+#btn_send a {display: block; width: 78px; height: 19px;}
+#btn_send a:hover { display: block; width: 78px; height: 19px;background: url(../images/button_send.gif) no-repeat 0px -19px}
+
+#btn_forget {display: block; width: 78px; height: 19px;background: url(../images/button_forget.gif) no-repeat 0px 0px;} 
+#btn_forget a {display: block; width: 78px; height: 19px;}
+#btn_forget a:hover { display: block; width: 78px; height: 19px;background: url(../images/button_forget.gif) no-repeat 0px -19px}
+
+#btn_join {display: block; width: 78px; height: 19px;background: url(../images/button_join.gif) no-repeat 0px 0px;} 
+#btn_join a {display: block; width: 78px; height: 19px;}
+#btn_join a:hover { display: block; width: 78px; height: 19px;background: url(../images/button_join.gif) no-repeat 0px -19px}
+
+#btn_alter {display: block; width: 78px; height: 19px;background: url(../images/button_alter.gif) no-repeat 0px 0px;} 
+#btn_alter a {display: block; width: 78px; height: 19px;}
+#btn_alter a:hover { display: block; width: 78px; height: 19px;background: url(../images/button_alter.gif) no-repeat 0px -19px}
+
+#btn_delete {display: block; width: 78px; height: 19px;background: url(../images/button_delete.gif) no-repeat 0px 0px;} 
+#btn_delete a {display: block; width: 78px; height: 19px;}
+#btn_delete a:hover { display: block; width: 78px; height: 19px;background: url(../images/button_delete.gif) no-repeat 0px -19px}
+
+#btn_shop {display: block; width: 100px; height: 25px;background: url(../images/button_shop.gif) no-repeat 0px 0px;} 
+#btn_shop a {display: block; width: 100px; height: 25px;}
+#btn_shop a:hover { display: block; width: 100px; height: 25px;background: url(../images/button_shop.gif) no-repeat 0px -25px}
+
+#btn_pay {display: block; width: 100px; height: 25px;background: url(../images/button_pay.gif) no-repeat 0px 0px;} 
+#btn_pay a {display: block; width: 100px; height: 25px;}
+#btn_pay a:hover { display: block; width: 100px; height: 25px;background: url(../images/button_pay.gif) no-repeat 0px -25px}
+
+#btn_car {display: block; width: 95px; height: 22px;background: url(../images/button_car.jpg) no-repeat 0px 0px;} 
+#btn_car a {display: block; width: 95px; height: 22px;}
+#btn_car a:hover { display: block; width: 95px; height: 22px;background: url(../images/button_car.jpg) no-repeat 0px -22px}
+
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/* 圓角區塊 */
+
+.roundedBox {position:relative; padding:10px; margin:5px;}
+	.corner {position:absolute; width:20px; height:20px;}
+	.topLeft {top:0; left:0; background-position:-1px -1px;}
+	.topRight {top:0; right:0; background-position:-20px -1px;}
+	.bottomLeft {bottom:0; left:0; background-position:-1px -20px;}
+	.bottomRight {bottom:0; right:0; background-position:-20px -20px;}
+
+	#type1 {background-color:#ffffff; border:10px solid #f8f8f8;}
+		#type1 .corner {background-image:url(../images/rounded-corners_01.gif);}
+		#type1 .topLeft {top:-10px; left:-10px;}
+		#type1 .topRight {top:-10px; right:-10px;}
+		#type1 .bottomLeft {bottom:-10px; left:-10px;}
+		#type1 .bottomRight {bottom:-10px; right:-10px;}
+			
+	#type2 {background-color:#f8f8f8; border:1px solid #e6e6e6;}
+		#type2 .corner {background-image:url(../images/rounded-corners_02.gif);}
+		#type2 .topLeft {top:-1px; left:-1px;}
+		#type2 .topRight {top:-1px; right:-1px;}
+		#type2 .bottomLeft {bottom:-1px; left:-1px;}
+		#type2 .bottomRight {bottom:-1px; right:-1px;}
+		
+	#type3 {background-color:#fff; border:1px solid #ececec;}
+		#type3 .corner {background-image:url(../images/rounded-corners_03.gif);}
+		#type3 .topLeft {top:-1px; left:-1px;}
+		#type3 .topRight {top:-1px; right:-1px;}
+		#type3 .bottomLeft {bottom:-1px; left:-1px;}
+		#type3 .bottomRight {bottom:-1px; right:-1px;}
+
+
+
+

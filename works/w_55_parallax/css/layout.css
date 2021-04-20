@@ -1,0 +1,1105 @@
+/* PARALLAX SCROLLING EXPERIMENT
+*****************************************************************/
+
+
+/* Global reset
+   http://meyerweb.com/eric/tools/css/reset/ 
+*****************************************************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding:0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Extended base styles (site specific)
+*****************************************************************/
+
+body {
+	background: #e3e5e5;
+	overflow-x: hidden;
+	color: #000;
+	font-size: 14px;
+	font-family: "微軟正黑體", "新細明體", "細明體", Arial,sans-serif,Verdana;
+}
+
+html, body{
+	width:100%; min-width: 1024px;
+	height:100%;
+	background-attachment:fixed;
+	box-sizing: border-box;
+	position:relative;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+h1 {
+	color: #888;
+}
+a, a:link,
+a:active,
+a:visited {
+	-webkit-transition: color 0.25s ease-out;
+	   -moz-transition: color 0.25s ease-out;
+		-ms-transition: color 0.25s ease-out;
+		 -o-transition: color 0.25s ease-out;
+			transition: color 0.25s ease-out;
+	color:#21a97e;
+	outline: none;
+	text-decoration:none;
+	}
+	a:hover { 
+		color:#000;
+		}
+img { 
+	display:block;
+	}
+p {
+	margin:1em 0;
+	}
+audio {
+	display: none;
+	}
+/* Common shared styles
+*****************************************************************/
+
+hr {
+	margin: 0;
+	border: none;
+	height: 3px;
+}
+
+/* Page structure
+*****************************************************************/
+
+#wrapper {
+		width:100%;
+		height:100%;
+	position: relative;
+}
+
+
+/* Nav
+*****************************************************************/
+
+nav#primary {
+	z-index: 20;
+	position: fixed;
+	top: 50%;
+	right: 16px;
+	margin-top: -40px;
+}
+nav#primary li {
+	position: relative;
+	height: 18px;
+	margin: 0 0 8px 0;
+}
+nav#primary a {
+	display: block;
+	width: 18px;
+	height: 18px;
+	margin: 0 0 8px 0;
+	border-radius: 50%;
+	text-indent: -9999px;
+	background: #fff url('../img/nav_pic.png');
+}
+nav#primary a:hover, nav#primary a.active {
+	box-shadow: 0 0 8px rgba(255,255,255,.85);
+}
+nav#primary ul li:nth-child(1) a{ background-position: 0 0; }
+	nav#primary ul li:nth-child(2) a{ background-position: 0 -18px; }
+	nav#primary ul li:nth-child(3) a{ background-position: 0 -36px; }
+	nav#primary ul li:nth-child(4) a{ background-position: 0 -54px; }
+	nav#primary ul li:nth-child(5) a{ background-position: 0 -72px; }
+	nav#primary ul li:nth-child(6) a{ background-position: 0 -90px; }
+nav#primary ul li:nth-child(1) a:hover, nav#primary ul li:nth-child(1) a.active{ background-position: -18px 0; background:#0CC;}
+	nav#primary ul li:nth-child(2) a:hover, nav#primary ul li:nth-child(2) a.active{ background-position: -18px -18px; background:#0CC;}
+	nav#primary ul li:nth-child(3) a:hover, nav#primary ul li:nth-child(3) a.active{ background-position: -18px -36px; }
+	nav#primary ul li:nth-child(4) a:hover, nav#primary ul li:nth-child(4) a.active{ background-position: -18px -54px; }
+	nav#primary ul li:nth-child(5) a:hover, nav#primary ul li:nth-child(5) a.active{ background-position: -18px -72px; }
+	nav#primary ul li:nth-child(6) a:hover, nav#primary ul li:nth-child(6) a.active{ background-position: -18px -90px; }
+nav#primary h1 {
+	position: absolute;
+	right: 22px;
+	top: -7px;
+	display: none;
+	padding: 4px 20px 4px 7px;
+	color: #fff;
+	white-space: nowrap;
+	background: transparent url('../img/nav-arrow.png') 100% 50% no-repeat;
+	}
+nav.next-prev {
+	margin: 20px 0 0 0;
+	}
+	a.prev,
+	a.next {
+		display: block;
+		width: 15px;
+		height: 11px;
+		text-indent: -9999px; opacity:.1;
+		}
+	a.prev {
+		margin: 0 auto 5px auto;
+		background: transparent url('../img/scroll-arrow-up.png') 0 0 no-repeat;
+		}
+		a.prev:hover {
+			background: transparent url('../img/scroll-arrow-up.png') 0 -11px no-repeat;
+			}
+	a.next {
+		margin: 5px auto 0 auto;
+		background: transparent url('../img/scroll-arrow-down.png') -1px 0 no-repeat;
+		}
+		a.next:hover {
+			background: transparent url('../img/scroll-arrow-down.png') -1px -11px no-repeat;
+			}
+
+/* Parallax
+*****************************************************************/
+
+/* content */
+#content {
+	z-index: 10;
+	position: relative;
+	width:100%;
+	margin: 0 auto;
+	line-height: 1.7;
+	}
+	#content article { 
+		width: 100%;
+		}
+		#area_A,
+		#area_B,
+		#area_C,
+		#area_D,
+		#area_E, 
+		#area_F{
+			
+			}
+		#area_A {
+			position: absolute;
+			top: 0px;
+			}
+		#area_B {
+			position: absolute;
+			top: 1090px;
+			}
+		#area_C {
+			position: absolute;
+			top: 2180px;
+			}
+		#area_D {
+			position: absolute;
+			top: 3270px;
+			}
+		#area_E {
+			position: absolute;
+			top: 4360px;
+			}
+		#area_F {
+			position: absolute;
+			top: 5450px;
+			}
+
+
+
+
+/* 背景物件 *****/
+#parallax-bg3, #parallax-bg2, #parallax-bg1 {
+	width: 100%;
+	height:100% /*6300px*/;
+	position: absolute; overflow:hidden;
+	}
+	.planet_red, .planet_gray, .planet_ring, .astronaut_1, .astronaut_2, .satellite, .space_shuttle, .rocket,
+	.cloud_big_1, .cloud_big_2, .cloud_medium_l1, .cloud_medium_l2, .cloud_medium_r1, .cloud_medium_r2, .cloud_small,
+	.cloud_orange_1, .cloud_orange_2, .cloud_orange_3,
+	.aircraft_left, .aircraft_right_1, .aircraft_right_2, .hotballoon_red, .hotballoon_blue, 
+	.parachute_red_1, .parachute_red_2, .parachute_yellow, .parachute_blue{
+		position: absolute;
+		text-indent:-9999px;
+	}
+#parallax-bg3 { z-index: 5; }
+#parallax-bg2 { z-index: 4; }
+#parallax-bg1 { z-index: 3; }
+
+
+	/* 物件-雲*/
+	.cloud_big_1, .cloud_big_2, .cloud_medium_l1, .cloud_medium_l2, .cloud_medium_r1, .cloud_medium_r2, .cloud_small, 
+	.cloud_orange_1, .cloud_orange_2, .cloud_orange_3 {
+		background: url(../img/object_cloud.png) no-repeat 0 0;
+		background-size: cover;
+	}
+	.cloud_big_1{
+		background: url(../img/object_cloud.png) no-repeat 0 0;
+		background-size: cover;
+		width:300px; height:161px;
+		top:5820px; right:7%;
+	}
+	.cloud_big_2{
+		background: url(../img/object_cloud.png) no-repeat 0 0;
+		background-size: cover;
+		width:180px; height:96px;
+		top:7750px; right:15%;
+	}
+	.cloud_medium_l1{
+		background: url(../img/object_cloud.png) no-repeat 0 0;
+		background-size: cover;
+		width:120px; height:64px;
+		top:5800px; left:16%;
+		opacity: 0.7;
+	}
+	.cloud_medium_l2{
+		background: url(../img/object_cloud.png) no-repeat 0 0;
+		background-size: cover;
+		width:130px; height:70px;
+		top:5900px; left:8%;
+	}
+	.cloud_medium_r1{
+		background: url(../img/object_cloud.png) no-repeat 0 0;
+		background-size: cover;
+		width:130px; height:70px;
+		top:5800px; right:5%;
+		opacity: 0.6;
+	}
+	.cloud_medium_r2{
+		background: url(../img/object_cloud.png) no-repeat 0 0;
+		background-size: cover;
+		width:100px; height:54px;
+		top:7700px; right:8%;
+		opacity: 0.75;
+	}
+	.cloud_small{
+		background: url(../img/object_cloud.png) no-repeat 0 0;
+		background-size: cover;
+		width:80px; height:43px;
+		top:7850px; right:12%;
+		opacity: 0.85;
+	}
+	.cloud_orange_1{
+		background: url(../img/object_cloud_orange_01.png) no-repeat 0 0;
+		background-size: cover;
+		width:260px; height:114px;
+		top:4400px; left:30%;
+	}
+	.cloud_orange_2{
+		background: url(../img/object_cloud_orange_02.png) no-repeat 0 0;
+		background-size: cover;
+		width:200px; height:88px;
+		top:4390px; left:42%;
+		opacity: 0.7;
+	}
+	.cloud_orange_3{
+		background: url(../img/object_cloud_orange_01.png) no-repeat 0 0;
+		background-size: cover;
+		width:140px; height:61px;
+		top:4450px; right:30%;
+	}
+
+
+	/* 物件-飛機、降落傘、熱氣球*/
+	.aircraft_right_1{
+		background: url(../img/object_aircraft_right.png) no-repeat 0 0;
+		background-size: cover;
+		width:115px; height:40px;
+		top:4500px; right:6%;
+	}
+	.aircraft_right_2{
+		background: url(../img/object_aircraft_right.png) no-repeat 0 0;
+		background-size: cover;
+		width:130px; height:35px;
+		top:7800px; right:15%;
+	}
+	.aircraft_left{
+		background: url(../img/object_aircraft_left.png) no-repeat 0 0;
+		background-size: cover;
+		width:120px; height:30px;
+		top:5800px; left:22%;
+	}
+	.parachute_red_1{
+		background: url(../img/object_parachute_red.png) no-repeat 0 0;
+		background-size: cover;
+		width:80px; height:80px;
+		top:5900px; right:10%;
+	}
+	.parachute_red_2{
+		background: url(../img/object_parachute_red.png) no-repeat 0 0;
+		background-size: cover;
+		width:80px; height:80px;
+		top:7650px; left:15%;
+	}
+	.parachute_blue{
+		background: url(../img/object_parachute_blue.png) no-repeat 0 0;
+		background-size: cover;
+		width:80px; height:80px;
+		top:8300px; left:15%;
+	}
+	.parachute_yellow{
+		background: url(../img/object_parachute_yellow.png) no-repeat 0 0;
+		background-size: cover;
+		width:200px; height:200px;
+		top:8250px; right:10%;
+	}
+	.hotballoon_red{
+		background: url(../img/object_hotballoon_red.png) no-repeat 0 0;
+		background-size: cover;
+		width:50px; height:50px;
+		top:8200px; left:5%;
+	}
+	.hotballoon_blue{
+		background: url(../img/object_hotballoon_blue.png) no-repeat 0 0;
+		background-size: cover;
+		width:40px; height:40px;
+		top:6400px; left:10%;
+	}
+
+
+	/* 物件-太空梭、太空人、衛星、火箭 */
+	.space_shuttle{
+		background: url(../img/object_space_shuttle.png) no-repeat 0 0;
+		background-size: cover;
+		width:90px; height:79px;
+		top:900px; right:250px;
+	}
+	.satellite{
+		background: url(../img/object_satellite.png) no-repeat 0 0;
+		background-size: cover;
+		width:180px; height:105px;
+		top:1300px; right:300px;
+	}
+	.astronaut_2{
+		background: url(../img/object_astronaut.png) no-repeat 0 0;
+		background-size: cover;
+		width:86px; height:86px;
+		top:1800px; right:180px;
+	}
+	.astronaut_1{
+		background: url(../img/object_astronaut.png) no-repeat 0 0;
+		background-size: cover;
+		width:90px; height:90px;
+		top:600px; left:5%;
+	}
+	.rocket{/*火箭*/
+		top:2600px; left:350px;
+	}
+		.rocket div{ 
+			position:relative;
+			background: url(../img/object_rocket.png) no-repeat 0 0;
+			background-size: cover;
+			width:60px; height:87px;
+		}
+		.rocket div .fire01, .rocket div .fire02 {
+			position:absolute; top:90px; z-index:-1;
+		}
+		.rocket div .fire01 {
+			background-image: url(../img/object_fire_01.png);
+			background-size: cover;
+			width:60px; height:58px;
+		}
+		.rocket div .fire02 {
+			background-image: url(../img/object_fire_02.png);
+			background-size: cover;
+			width:60px; height:58px;
+		}
+
+
+	/* 物件-星球 */
+	.planet_red{
+		background: url(../img/object_planet_red.png) no-repeat 0 0;
+		background-size: cover;
+		opacity: 0.75;
+		width:700px; height:700px;
+		top:-200px; left:-150px;
+	}
+	.planet_gray{
+		background: url(../img/object_planet_gray.png) no-repeat 0 0;
+		background-size: cover;
+		opacity: 0.75;
+		width:250px; height:250px;
+		top:950px; right:5%;
+	}
+	.planet_ring{
+		background: url(../img/object_planet_ring.png) no-repeat 0 0;
+		background-size: cover;
+		width:300px; height:115px;
+		top:1200px; left:12%;
+	}
+
+
+
+
+
+/* 背景星辰 *****/
+#space { 
+	position: absolute;
+	z-index:1;
+	top: 0;
+	left: 0;
+	}
+
+div.nebula-container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index:-1;
+	}
+	div.nebula, div.nebula_fadeIn {
+		width: 900px;
+		height: 900px;
+		display: block;
+		position: absolute;
+		left: 50%; top:0;
+		margin-left: -450px;
+	}
+	div.nebula.nebula-1 {
+		background: url(../img/bg_nebula_01.jpg) no-repeat 0 0;
+		background-size:900px 900px;
+	}
+	div.nebula_fadeIn.nebula-2 {
+		background: url(../img/bg_nebula_02.png) no-repeat 0 0;
+		background-size:900px 270px;
+		left: 60%;
+	}
+	div.nebula_fadeIn.nebula-3 {
+		background: url(../img/bg_nebula_03.png) no-repeat 0 0;
+		background-size:700px 158px;
+		left: 70%;
+	}
+	div.nebula.nebula-4 {
+		background: url(../img/bg_nebula_022.png) no-repeat 0 0;
+		background-size:700px 700px;
+	}
+
+
+
+
+
+/* 背景流星 *****/
+.meteor {
+	position: absolute;
+	z-index:1;
+	top: 50px;
+	left: 280px;
+	width: 300px;
+	height: 1px;
+}
+.meteor:before {
+	content: ' ';
+	position: absolute;
+	width: 4px;
+	height: 5px;
+	background-color: white;
+	border-radius: 50%;
+	box-shadow: 0 0 14px 4px white;
+	margin-top: -2px;
+}
+.meteor:nth-child(1) { top: 1150px; left: 480px;}
+.meteor:nth-child(2) { top: 1350px; left: 280px;}
+.meteor:nth-child(3) { top: 1300px; left: 790px;}
+.meteor:nth-child(4) { top: 1400px; left: 800px;}
+.meteor:nth-child(5) { top: 1450px; left: 960px;}
+.meteor:nth-child(6) { top: 1400px; left: 980px;}
+.meteor:nth-child(7) { top: 1250px; left: 990px;}
+.meteor:nth-child(8) { top: 1200px; left: 650px;}
+.meteor:nth-child(9) { top: 1250px; left: 660px;}
+
+
+
+
+
+/* 背景霧氣 *****/
+.fog_wrap{
+	position:absolute;
+	z-index:15; top:1800px;
+	overflow:hidden;
+	width:100%; height:650px;
+}
+.fog-particle{
+	position:absolute;
+	opacity:0.0;
+	left:100%;
+}
+
+
+
+
+
+
+/* 背景下雨 *****/
+.rain {
+	position: absolute;
+	z-index:15; top:4600px;
+	left: 50%; margin:0 0 0 -230px;
+	width:460px; height:240px;
+}
+.dropss_rainbox {
+	position: absolute;
+	bottom: 100%;
+	width: 15px;
+	height: 120px;
+	pointer-events: none;
+}
+.stem {
+	width: 3px;
+	height: 60%;
+	margin-left: 7px;
+	background: linear-gradient(to bottom, rgba(217,121,53, 0), rgba(217,121,53,1));
+}
+.splat {
+	width: 15px;
+	height: 10px;
+	border-top: 5px dotted rgba(217,121,53,1);
+	border-radius: 50%;
+	display: none;
+}
+.splat-toggle .splat {
+	display: block;
+}
+
+
+
+
+
+
+/* 背景下方城市 *****/
+#footer {
+	position:fixed; z-index:5;
+	right:0; bottom:0; left:0;
+}
+#footer > .img {
+	width:100%; height:570px; background:url(../img/footer.png) center bottom; 
+	display:block; background-size:cover;
+}
+
+
+
+
+
+
+/* 浮島相關 *****/
+/* -- Island -- */
+.island_all{
+	position: fixed;
+	z-index: 20;/*10*/
+	overflow:hidden;
+	width:690px;
+	height:675px;
+	top: 50%;
+	left:50%;
+	margin:-337.5px 0 0 -345px;
+}
+
+
+/* 浮島-泡泡 */
+.popo{
+	position:absolute; 
+	background:url(../img/popo_01.png) no-repeat;
+	width:100%;
+	height:100%;
+}
+
+
+/* -- Island wrap -- */
+.island_wrap{
+	position:absolute;
+	width:460px; /*1200*/
+	height:245px;/*640*/
+	top: 50%;
+	left:50%;
+	margin:-50px 0 0 -230px;/*-320px 0 0 -600px*/
+}
+.island_green, .island_brown{
+	position:relative;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:100%;
+	width: 100%;
+	height: 100%;
+}
+.island_green{
+	background-image:url(../img/island_green.png);
+}
+.island_brown{
+	background-image:url(../img/island_brown.png);
+}
+
+
+/* 浮島-水管 */
+.pipeline {
+	position:absolute;
+	z-index: 5;
+	width: 42px;/*110*/
+	height:42px;/*110*/
+	top: 50%;
+	left:42.7%;
+}
+.pipeline div {
+	position:relative;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:100%;
+	width: 100%;
+	height: 100%;
+}
+.pipeline div .pipeline01, .pipeline div .pipeline02 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.pipeline div .pipeline01 {
+	background-image: url(../img/island_pipeline_01.png);
+}
+.pipeline div .pipeline02 {
+	background-image: url(../img/island_pipeline_02.png);
+}
+
+
+/* 浮島-石頭 */
+.stone{
+	position:absolute;
+	z-index: 1;
+	width: 170px;/*440*/
+	height:116px;/*300*/
+	top: 38%;
+	left:18%;
+}
+.stone div {
+	position:relative;
+	width: 100%;
+	height: 100%;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+.stone div .stone_green01, .stone div .stone_green02, .stone div .stone_green03,
+.stone div .stone_brown01, .stone div .stone_brown02, .stone div .stone_brown03 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.stone div .stone_green01 {
+	background-image: url(../img/island_green_stone_01.png);
+}
+.stone div .stone_green02 {
+	background-image: url(../img/island_green_stone_02.png);
+}
+.stone div .stone_green03 {
+	background-image: url(../img/island_green_stone_03.png);
+}
+.stone div .stone_brown01 {
+	background-image: url(../img/island_brown_stone_01.png);
+}
+.stone div .stone_brown02 {
+	background-image: url(../img/island_brown_stone_02.png);
+}
+.stone div .stone_brown03 {
+	background-image: url(../img/island_brown_stone_03.png);
+}
+
+
+/* 浮島-水滴 */
+.dripping {
+	width: 16px;
+	height:50%;
+	position: absolute;
+	z-index:-1;
+	left:40.6%;
+	top: 56.8%;
+	color:#343F50;
+}
+.dripping .toggle-btn {
+	width: 6px;/*16*/
+	height:6px;/*16*/
+	background-color:#343F50;
+	position: absolute;
+	border-radius: 100%;
+}
+.dripping .drop {
+	width: 6px;/*16*/
+	height:6px;/*16*/
+	background-color:#343F50;
+	border-top-left-radius: 100%;
+	border-top-right-radius: 100%;
+	border-bottom-left-radius: 100%;
+}
+
+
+/* 浮島-放大 */
+.island_all_zoom{
+	width:800px;
+	height:600px;
+	margin:-300px 0 0 -400px;
+}
+.island_wrap_zoom{
+	width:800px;
+	height:427px;
+	margin:-213.5px 0 0 -400px;
+}
+.pipeline_zoom {
+	width: 74px;
+	height:74px;
+}
+.stone_zoom{
+	width: 294px;
+	height:201px;
+}
+.dripping .toggle-btn_zoom {
+	width: 10px;
+	height:10px;
+}
+.dripping .drop_zoom {
+	width: 10px;
+	height:10px;
+}
+
+
+
+
+
+/* 按鈕相關 *****/
+.btn_CC{
+	position:absolute; z-index:10;
+	top:130px; left:110px;
+	width:460px; height:200px;
+}
+.btn_DD{
+	position:absolute; z-index:10;
+	top:220px; left:100px;
+	width:350px; height:250px;
+}
+.btn_EE, .btn_FF{
+	position:absolute; z-index:10;
+	top:130px; left:110px;
+	width:460px; height:200px;
+}
+
+
+/* 按鈕-基礎 */
+.btn_object{
+	position:relative; cursor:pointer;}
+.btn_object img{
+	position:absolute; z-index:3;}
+.btn_object div{
+	position:absolute; z-index:5; opacity:0;}
+.btn_object svg{
+	position:absolute; z-index:2;}
+.btn_object span {
+	display: block;
+	border-radius: 50%;
+	position: absolute;
+	z-index:1;
+	opacity: 0;
+	background: -webkit-radial-gradient(rgba(255,223,67,1), rgba(255,223,67,0) 70%);
+	transition: all 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.btn_object:hover span {
+	opacity: 1;
+	transition: all 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.btn_object.switch{
+	width:80px; height:80px;}
+
+
+/* 按鈕-基礎外 */
+.btn_object_umb { width:160px; height:134px;}
+.btn_object_seed{ width:180px; height:200px;}
+.btn_object_umb .umbrella{
+	opacity:1;
+	margin:0 0 0 115px;
+	-webkit-transform: rotate(30deg);
+	   -moz-transform: rotate(30deg);
+		-ms-transform: rotate(30deg);
+		 -o-transform: rotate(30deg);
+			transform: rotate(30deg);
+	-webkit-transform-origin: 15% 0%;
+	   -moz-transform-origin: 15% 0%;
+		-ms-transform-origin: 15% 0%;
+		 -o-transform-origin: 15% 0%;
+			transform-origin: 15% 0%;}
+.btn_object_seed .seed{
+	opacity:1;
+	top:172px; left:62px;
+	}
+.btn_object_umb .umbrella_open, .btn_object_seed .seed_grow{
+	opacity:0;}
+.btn_object_umb:hover .umbrella, .btn_object_seed:hover .seed{
+	opacity:0;}
+.btn_object_umb:hover .umbrella_open, .btn_object_seed:hover .seed_grow{
+	opacity:1;
+	animation: img_opacity .7s ease-out;}
+
+.btn_object.umbrella_open{ position:relative; width:136px; height:120px; /*background:rgba(0,0,0,.2);*/}	 
+.btn_object.umbrella_open img{ position:absolute; z-index:10; opacity:0; width:136px; height:120px; margin:9px 0 0 11px;}
+.btn_object_umb:hover .umbrella_open img:nth-child(1){ animation:img_opacity_mov .4s ease-out; -webkit-animation:img_opacity_mov .4s ease-out; animation-delay: .2s; -webkit-animation-delay: .2s;}
+.btn_object_umb:hover .umbrella_open img:nth-child(2){ animation:img_opacity_mov .4s ease-out; -webkit-animation:img_opacity_mov .4s ease-out; animation-delay: .4s; -webkit-animation-delay: .4s;}
+.btn_object_umb:hover .umbrella_open img:nth-child(3){ animation:img_opacity_mov .4s ease-out; -webkit-animation:img_opacity_mov .4s ease-out; animation-delay: .6s; -webkit-animation-delay: .6s;}
+.btn_object_umb:hover .umbrella_open img:nth-child(4){ animation:img_opacity_mov .4s ease-out; -webkit-animation:img_opacity_mov .4s ease-out; animation-delay: .8s; -webkit-animation-delay: .8s;}
+.btn_object_umb:hover .umbrella_open img:nth-child(5){ animation:img_opacity_mov_end .4s ease-out infinite; -webkit-animation:img_opacity_mov_end .4s ease-out infinite; animation-delay: 1s; -webkit-animation-delay: 1s;}
+
+.btn_object.seed_grow{ position:relative; width:180px; height:200px; /*background:rgba(0,0,0,.2);*/}	 
+.btn_object.seed_grow img{ position:absolute; z-index:10; opacity:0; width:180px; height:200px; margin:9px 0 0 -9px;}
+.btn_object_seed:hover .seed_grow img:nth-child(1){ animation:img_opacity_mov .4s ease-out; -webkit-animation:img_opacity_mov .4s ease-out; animation-delay: .2s; -webkit-animation-delay: .2s;}
+.btn_object_seed:hover .seed_grow img:nth-child(2){ animation:img_opacity_mov .4s ease-out; -webkit-animation:img_opacity_mov .4s ease-out; animation-delay: .4s; -webkit-animation-delay: .4s;}
+.btn_object_seed:hover .seed_grow img:nth-child(3){ animation:img_opacity_mov .4s ease-out; -webkit-animation:img_opacity_mov .4s ease-out; animation-delay: .6s; -webkit-animation-delay: .6s;}
+.btn_object_seed:hover .seed_grow img:nth-child(4){ animation:img_opacity_mov .4s ease-out; -webkit-animation:img_opacity_mov .4s ease-out; animation-delay: .8s; -webkit-animation-delay: .8s;}
+.btn_object_seed:hover .seed_grow img:nth-child(5){ animation:img_opacity_mov .4s ease-out; -webkit-animation:img_opacity_mov .4s ease-out; animation-delay: 1s;  -webkit-animation-delay: 1s;}
+.btn_object_seed:hover .seed_grow img:nth-child(6){ animation:img_opacity_mov .4s ease-out; -webkit-animation:img_opacity_mov .4s ease-out; animation-delay: 1.2s; -webkit-animation-delay: 1.2s;}
+.btn_object_seed:hover .seed_grow img:nth-child(7){ animation:img_opacity_mov_end .4s ease-out infinite; -webkit-animation:img_opacity_mov_end .4s ease-out infinite; animation-delay: 1.4s; -webkit-animation-delay: 1.4s;}
+
+
+/* 按鈕-圖片 */
+.btn_object.fan img{
+	 width:100px; height:126px; margin:11px 0 0 9px;}
+.btn_object.n95 img{
+	 width:96px; height:83px; margin:13px 0 0 11px;}
+.btn_object.umbrella img{
+	 width:43px; height:120px; margin:9px 0 0 11px;}
+.btn_object.umbrella_open img{
+	 width:136px; height:120px; margin:9px 0 0 11px;}
+.btn_object.seed img{
+	 width:16px; height:24px; margin:12px 0 0 11px;}
+.btn_object.seed_grow img{
+	 width:180px; height:200px; margin:9px 0 0 -9px;}
+.btn_object.switch img{
+	 width:40px; height:36px; margin:10px 0 0 8px;}
+
+
+/* 按鈕-光暈 */
+.btn_object.fan span{
+	 width:160px; height:160px; margin:-20px 0 0 -20px;}
+.btn_object.n95 span{
+	width:140px; height:140px; margin:-15px 0 0 -15px;}
+.btn_object.umbrella span{
+	width:90px; height:160px; margin:-15px 0 0 -15px;}
+.btn_object.umbrella_open span{
+	width:185px; height:105px; margin:-10px 0 0 -15px;}
+.btn_object.seed span{
+	width:65px; height:65px; margin:-10px 0 0 -12px;}
+.btn_object.seed_grow span{
+	width:220px; height:180px; margin:-13px 0 0 -20px;}
+.btn_object.switch span{
+	width:80px; height:80px; margin:-12px 0 0 -12px;}
+
+
+/* 按鈕-鑰匙 */
+.btn_object.n95 p,
+.btn_object.switch p, 
+.btn_object_seed p {opacity: 0;
+	display:block; position:absolute; z-index:15;
+	width:70px; height:30px;
+	background:url(../img/key.png) no-repeat right;
+	background-size:30px 30px;
+	font-size:26px; color:#900; font-weight:900;
+}
+.btn_object.n95 p   { left:70px; top:0px;}
+.btn_object.switch p{ left:50px; top:0px;}
+.btn_object_seed p  { margin-top:100px; margin-left:100px;} 
+
+
+
+
+
+
+/* 滑鼠與箭頭 *****/
+.mouse_scroll {
+	position:fixed; z-index:30;	
+	right:50%; bottom:6%;
+	width: 24px;
+	height: 100px;
+}
+.m_scroll_arrows {
+	display: block;
+	width: 5px;
+	height:5px;
+	border-right: 2px solid white;
+	border-bottom:2px solid white;
+	margin: 0 0 0px 6px;
+	width: 16px;
+	height:16px;
+}
+.btn_arrow a {
+	display: inline-block;
+	margin: 1em 0
+}
+.btn_arrow a p{ font-size:15px; color:#fff; vertical-align:central;}
+.btn_arrow a:hover p{ color:rgba(255,195,0,1); text-shadow:0 0 4px rgba(0,0,0,.8);}
+.btn_arrow a:hover .m_scroll_arrows {
+	border-right-color: rgba(255,195,0,1);
+	border-bottom-color:rgba(255,195,0,1);
+	cursor: pointer;
+}
+.unu {
+	margin-top: 1px;
+}
+.doi {
+	margin-top: -6px;
+}
+.trei {
+	margin-top: -6px;
+}
+.mouse {
+	height: 42px;
+	width: 24px;
+	border-radius: 14px;
+	transform: none;
+	border: 2px solid white;
+	top: 170px;
+}
+.wheel {
+	height: 5px;
+	width: 2px;
+	display: block;
+	margin: 5px auto;
+	background: white;
+	position: relative;
+	height: 4px;
+	width: 4px;
+	border: 2px solid #fff;
+	-webkit-border-radius: 8px;
+			border-radius: 8px;
+}
+
+
+
+
+
+
+/* 使用者區塊 *****/
+.user_box{ 
+	position:fixed;
+	z-index:30;	
+	right:3%; top:3%;
+	display: block;
+	padding: 8px 23px;
+	margin: 0 0 8px 0;
+	border-radius: 8px;
+	background: rgba(255,255,255,.75);
+	border: 2px solid rgba(255,255,255,1); 
+	box-shadow: 0 0 10px rgba(0,0,0,.4);
+}
+.user_box ul {
+	padding: 0 0 0 10px;
+	float: right;
+}
+.user_box ul li{ 
+	width: 20px; height: 20px;
+	display: block;
+	float: left;
+	margin: 0 0 0 3px;
+	background: url(../img/key.png);
+	background-size: 20px 20px;
+}
+.user_box ul li:last-child{
+	margin: 0 ;
+}
+
+
+
+
+
+
+/*** ***/
+::-moz-selection {
+	background:#0CC;
+	color:#ffffff;
+	text-shadow:none
+}
+::selection {
+	background: #0CC;
+	color: #ffffff;
+	text-shadow: none
+}
+
+
+
+
+
+
+/* Loading
+*****************************************************************/
+.mask{
+	position: fixed;
+	z-index: 30;
+	overflow:hidden;
+	width: 100%;
+	height:100%;
+	background:rgba(0,0,0,.45);
+}
+.skip, .login{ position:absolute;}
+a.skip{ bottom:10%; right:10%; font-size:20px; color:rgba(255,255,255,1);}
+a.skip:hover{ color:#3C9;}
+.login{
+	display:block;
+	top:10%; right:10%;
+	width:73px; height:28px;
+	text-indent:-99999px;
+	background-image:url(../img/loading/btn_login.png);
+	background-position:left top;
+	background-size:73px 56px;}
+.login:hover{ background-position:left bottom;}
+.pop_box{
+	width: 600px;
+	height:320px;
+	position:relative;
+	top:50%; left:50%;
+	margin:-160px 0 0 -300px;
+	padding:222px 40px 0 40px;
+	background:url(../img/loading/pop_box.png);
+	background-size:cover;
+}
+.pop_bar{
+	position:absolute; z-index:1;
+	width: 520px;
+	height:52px;
+}
+.pop_baba{
+	position:absolute; z-index:5;
+	width: 54px; left:80px;
+	height:54px;
+}
+.burst{
+	display:none; position:absolute; z-index:5; margin:-40px 0 0 10px;
+}
+
+
+
+
+

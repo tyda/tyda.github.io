@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="refresh" content="4 ;URL=test_index.html" />
+
+<title>高雄污染防治_Loading</title>
+	<link rel="stylesheet" media="all" href="css/layout.css" />
+	<link rel="stylesheet" media="all" href="css/animations.css" />
+	<script type='text/javascript' src='js/lock.js'></script>
+</head>
+
+<body style=" background-color:rgb(24, 0, 45); overflow:hidden;"  oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+
+<div class="mask">
+	<a class="login" href="">Login</a>
+	<a class="skip" href="test_index.html">SKIP</a>
+	<div class="pop_box">
+        <canvas class="burst" id="coinAnimation"></canvas>
+		<img src="img/loading/pop.gif" class="pop_bar"/>
+	</div>
+</div>
+
+
+
+<div class="island_all">
+
+	<div class="popo"></div>
+	<div class="island_wrap">
+		<div class="island_green">
+			<div class="pipeline">
+				<div>
+					<div class="pipeline01"></div>
+					<div class="pipeline02"></div>
+				</div>
+			</div>
+			<div class="stone">
+				<div>
+					<div class="stone_green01"></div>
+					<div class="stone_green02"></div>
+					<div class="stone_green03"></div>
+				</div>
+			</div>
+			<div class="dripping">
+				<div class="toggle-btn"></div>
+				<div class="drop"></div>
+			</div>
+		</div>
+	</div><!-- island_wrap -->
+
+</div>
+
+
+
+<div id="wrapper">
+
+	<div class="move_verticalA astronaut_1" data-400="top:600px;"></div>
+	<div class="object_rotate planet_red" data-0="top: -200px;"></div>
+
+	<canvas id="space"></canvas>
+
+	<div class="nebula-container">
+		<div class="nebula nebula-1" data-0="top: 0px;"></div>
+	</div>
+
+</div>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+      <feBlend in="SourceGraphic" in2="goo" />
+  	</filter>
+  </defs>
+</svg>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bgStar.js"></script>
+<script>
+$(function () {   
+    setTimeout(function () {   
+        $("canvas").show();   
+    }, 3000);   
+}) 
+</script>
+<script>
+(function() {
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
+                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+ 
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+ 
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+}());
+
+(function () {
+			
+	var coin,
+		coinImage,
+		canvas;					
+
+	function gameLoop () {
+	
+	  window.requestAnimationFrame(gameLoop);
+
+	  coin.update();
+	  coin.render();
+	}
+	
+	function sprite (options) {
+	
+		var that = {},
+			frameIndex = 0,
+			tickCount = 0,
+			ticksPerFrame = options.ticksPerFrame || 0,
+			numberOfFrames = options.numberOfFrames || 1;
+		
+		that.context = options.context;
+		that.width = options.width;
+		that.height = options.height;
+		that.image = options.image;
+		
+		that.update = function () {
+
+            tickCount += 1;
+
+            if (tickCount > ticksPerFrame) {
+
+				tickCount = 0;
+				
+                if (frameIndex < numberOfFrames - 1) {	
+                    frameIndex += 1;
+                } else {
+                    frameIndex = 0;
+                }
+            }
+        };
+		
+		that.render = function () {
+		
+		  that.context.clearRect(0, 0, that.width, that.height);
+		  
+		  that.context.drawImage(
+		    that.image,
+		    frameIndex * that.width / numberOfFrames,
+		    0,
+		    that.width / numberOfFrames,
+		    that.height,
+		    0,
+		    0,
+		    that.width / numberOfFrames,
+		    that.height);
+		};
+		
+		return that;
+	}
+	
+	canvas = document.getElementById("coinAnimation");
+	canvas.width = 120;
+	canvas.height = 120;
+	
+	coinImage = new Image();	
+	
+	coin = sprite({
+		context: canvas.getContext("2d"),
+		width: 3240,
+		height: 120,
+		image: coinImage,
+		numberOfFrames: 27,
+		ticksPerFrame: 2
+	});
+	
+	
+	coinImage.addEventListener("load", gameLoop);
+	coinImage.src = "img/loading/explosions.png";
+
+} ());
+</script>
+
+
+</body>
+</html>

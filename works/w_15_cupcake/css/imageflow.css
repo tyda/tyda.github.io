@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+/* ImageFlow Settings - CSS 2.1
+==================================== */
+@media screen, projection {
+
+	.imageflow {
+		overflow:hidden;
+		position:relative; 
+		text-align:left;
+		visibility:hidden;
+		width:100%;
+	}
+	.imageflow img {
+		border:solid 0px #ccc;
+		position:absolute;
+		top:0;
+		visibility:hidden;		
+		-ms-interpolation-mode:bicubic; /* Enables bicubic image resampling for the IE7 */
+	}	
+	.imageflow p {
+		margin:0 auto;
+		text-align:center;
+	}
+	.imageflow .loading {
+		border:1px solid white;
+		height:15px;
+		left:50%;
+		margin-left:-106px;
+		padding:5px;
+		position:relative;
+		visibility:visible;
+		width:200px;
+	}
+	.imageflow .loading_bar {
+		background:#fff;
+		height:15px;
+		visibility:visible;
+		width:1%;
+	}
+	.imageflow .navigation{
+		z-index:10000;
+	}
+	.imageflow .caption {
+		font-weight:bold;
+		position:relative; 
+		text-align:center;
+		z-index:10001;
+		font-size:14px;
+		margin-top:55px;
+	}
+	.imageflow .Imageflow_caption {
+		position:absolute;
+		margin:-5000px 0 0 -5000px;
+		visibility:hidden;
+	}
+	.imageflow .scrollbar {
+		background-image:url(../images/imageflow/imageflow_line.png);
+		position:relative;  height:45px; width:100%;
+		visibility:hidden;
+		z-index:10002;
+	}
+	.imageflow .slider {
+		background-image:url(../images/imageflow/imagesflow_slider.png);
+		background-repeat:no-repeat;
+		height:45px;
+		margin:-6px 0 0 -7px;
+		position:absolute;
+		width:40px;
+		z-index:10003;
+		
+	}
+	.imageflow .images {
+		overflow:hidden;
+		white-space:nowrap;
+	}
+
+	.imageflow .button {
+		cursor:pointer;
+		height:45px;
+		position:relative;
+		width:40px;
+	}
+	.imageflow .previous {
+		background: url(../images/imageflow/imagesflow_button_left.png) top left no-repeat;
+		float:left;
+		margin: -7px 0 0 -30px;
+	}
+	.imageflow .next {
+		background: url(../images/imageflow/imagesflow_button_right.png) top left no-repeat;
+		float:right;	
+		margin:-7px -30px 0 30px;
+	}
+}

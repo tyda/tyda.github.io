@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="日月潭民宿‧愛黏在一起設計師旅宿位於日月潭風景區，鄰近日月潭、九族文化村等景點，提供日月潭民宿、日月潭住宿" />
+<meta name="keywords" content="日月潭民宿,日月潭住宿" />
+<meta name="copyright" content="日月潭愛黏在一起設計師旅宿" />
+<meta name="Author" content="日月潭愛黏在一起設計師旅宿" /> 
+<meta name="distribution" content="Taiwan"/>
+<meta name="robots" content="all"/> 
+<meta name="revisit-after" content="3 days"/>
+<meta name="distribution" content="global"/>
+<meta name="rating" content="general"/>
+<meta name="resource-type" content="DOCUMENT"/>
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>日月潭民宿‧愛黏在一起設計師旅宿</title>
+<!-- TemplateEndEditable -->
+
+<!-- CSS -->
+<link href="../css/layout.css" rel="stylesheet" type="text/css" />
+<link href="../css/camera.css" rel="stylesheet" type="text/css" id="camera-css" media="all"> 
+<!-- JS  -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.srcipt.js"></script>
+
+<!-- Camera -->
+    <script type='text/javascript' src='js/jquery.easing.1.3.js'></script>
+    <script type='text/javascript' src='js_camera/jquery.mobile.customized.min.js'></script>
+    <script type='text/javascript' src='js_camera/camera.min.js'></script> 
+    <script>
+		jQuery(function(){
+			jQuery('#camera_wrap_1').camera({
+				thumbnails: true,
+				pagination: false,
+				height: '475px',
+				loader: 'bar'
+			});
+		});
+	</script>
+
+
+</head>
+
+<body>
+<div class="wrapper">
+<div class="wrapper_main">
+<div class="wrapper_main_header">
+
+
+
+	<div class="main_header">
+		<div class="header">
+			<div class="logo"><img src="images/logo_main.png" /></div>
+			<div class="nav">
+				<ul>
+				<!-- TemplateBeginEditable name="menu" class="menu" -->
+				<!-- TemplateEndEditable -->
+				<br class="clear" /></ul>
+			</div>
+			<div class="top_btn">
+				<span><a href="index.html">home</a><img src="images/icon_slash_main.png" /><!--<a href="about.html">introduction</a><img src="images/icon_slash.png" /><a href="traffic.html">traffic</a>--><a href="#">繁體版</a><img src="images/icon_slash_main.png" /><a href="cn/">簡體版</a></span>
+				<ul><li class="blend"><a href="https://www.facebook.com/pages/%E6%84%9B%E9%BB%8F%E5%9C%A8%E4%B8%80%E8%B5%B7-%EC%9B%83%EC%9C%A0-%E8%A8%AD%E8%A8%88%E5%B8%AB%E6%B0%91%E5%AE%BF/258905234294913?ref=ts&fref=ts" target="_blank" class="community fb"></a></li>
+					<!--<li class="blend"><a href="#" class="community tw"></a></li>-->
+				</ul>
+			</div>
+		</div><!-- //header -->
+
+		<div class="side">
+		<!-- TemplateBeginEditable name="left_menu" class="left_menu" -->
+		<!-- TemplateEndEditable -->
+		</div><!-- //side -->
+	</div><!-- //main_header -->
+
+
+
+	<div class="main_wrapper">
+		<div class="content_wrap">
+		<div class="content">
+		<!-- TemplateBeginEditable name="main" class="main" -->
+		<!-- TemplateEndEditable -->
+		</div><!-- //content -->
+
+		<div class="footer">
+			<a href="about.html">愛黏在一起</a>　|　<a href="news.html">最新消息</a>　|　<a href="rooms.html">房間介紹</a>　|　<a href="traffic.html">如何來訪</a>　|　<a href="travel.html">慢遊資訊</a><br />
+			南投縣魚池鄉新城村修正巷3號之12　　電話：049-2898088 ‧ 0988-389900　　服務時間：09:00 ~ 22:00　　　　 　　　　　　　　<span class="font_12">© Love Together , 2014</span>
+		</div>
+		</div><!-- //wrap -->
+	</div><!-- //main_wrapper -->
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+</body>
+</html>

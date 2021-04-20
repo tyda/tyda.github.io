@@ -1,0 +1,16 @@
+@charset "utf-8";
+/*
+Theme Name: g_graphics
+Version: 2.0.0
+*/
+
+@import "base.css";
+@import "common.css";
+@import "nav.css";
+@import "responsive.css";
+
+
+@media print{
+body {
+_zoom: 67%; /*WinIE only */
+}

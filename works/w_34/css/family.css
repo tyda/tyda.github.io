@@ -1,0 +1,79 @@
+/* { behavior: url(includes/iepngfix.htc) } */
+#head {
+	Z-INDEX: 2;
+	LEFT: 0px;
+	WIDTH: 990px;
+	POSITION: absolute;
+	TOP: 0px;
+	HEIGHT: 60px;
+	visibility: visible;
+}
+#flash {
+	Z-INDEX: 1;
+	LEFT: 0px;
+	WIDTH: 899px;
+	POSITION: absolute;
+	TOP: 0px;
+	HEIGHT: 0px;
+	visibility: visible;
+}
+
+.bimage01 {  background-attachment: fixed; background-repeat: no-repeat;}
+.bimage02 {  background-attachment: fixed; background-repeat: no-repeat; background-position: top;}
+body {
+	background-image: url(../images/bgbg.gif);
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+
+
+.link-no:hover ,.link-no:visited ,.link-no:link
+{font-size: 10px; height:10px; color:#814233; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 120%;}
+.link-no:hover
+{font-size: 10px; height:10px; color:#cc330e; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 120%;}
+
+.link-menu:hover ,.link-menu:visited ,.link-menu:link
+{font-size: 12px; height:10px; color:#645e5e; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 150%;}
+.link-menu:hover
+{font-size: 12px; height:10px; color:#ffffff; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 150%; font-weight: bold;}
+
+.link-news:hover ,.link-news:visited ,.link-news:link
+{font-size: 12px; height:10px; color:#828282; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 150%;}
+.link-news:hover
+{font-size: 12px; height:10px; color:#fd597c; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 150%;}
+
+.link-news-1:hover ,.link-news-1:visited ,.link-news-1:link
+{font-size: 12px; height:10px; color:#ffffff; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 150%;}
+.link-news-1:hover
+{font-size: 12px; height:10px; color:#f4bdc8; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 150%;}
+
+.link-top:hover ,.link-top:visited ,.link-top:link
+{font-size: 11px; height:10px; color:#656565; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 150%;}
+.link-top:hover
+{font-size: 11px; height:10px; color:#a47a20; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 150%;}
+
+
+
+
+.font_13-titlepx {font-size: 13px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #ffc170; line-height: 150%; font-weight: bold;}
+.font_13-redpx {font-size: 13px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #7a0201; line-height: 150%;}
+
+.font_12-whitepx {font-size: 12px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 150%; color: #ffffff;}
+.font_12-mainpx {font-size: 12px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 150%; color: #797979;}
+.font_12-titlepx {font-size: 12px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 110%; color: #454545;}
+
+
+.font_11-graypx {font-size: 11px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 120%; color: #716f6f;}
+.font_11-gray-1px {font-size: 11px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 120%; color: #a0a0a0;}
+.font_11-purplepx {font-size: 11px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 150%; color: #411a92;}
+.font_11-bluepx {font-size: 11px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 130%; color: #a4adb3;}
+
+.font_10-gray-1px {font-size: 10px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 120%; color: #a0a0a0;}
+.font_10-gray-2px {font-size: 10px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 120%; color: #c3c3c3;}
+.font_10-bluepx {font-size: 10px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 130%; color: #3872a4;}
+.font_10-purplepx {font-size: 10px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 150%; color: #6b2a78;}
+.font_10-pinkpx {font-size: 10px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 150%; color: #e5a1c1;}
+

@@ -1,0 +1,860 @@
+/* PARALLAX SCROLLING EXPERIMENT
+*****************************************************************/
+
+
+/* Global reset
+   http://meyerweb.com/eric/tools/css/reset/ 
+*****************************************************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding:0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Extended base styles (site specific)
+*****************************************************************/
+
+body {
+	background:#FFF;
+	overflow-x: hidden;
+	color: #000;
+	font-size: 14px;
+	font-family: "微軟正黑體", "新細明體", "細明體", Arial,sans-serif,Verdana;
+}
+
+html, body {
+	width: 100%; min-width: 1024px;
+	height: 100%;
+	background-attachment:fixed;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	position: relative;
+}
+
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+h1 {
+	color: #888;
+}
+a, a:link,
+a:active,
+a:visited {
+	-webkit-transition: color 0.25s ease-out;
+	   -moz-transition: color 0.25s ease-out;
+		-ms-transition: color 0.25s ease-out;
+		 -o-transition: color 0.25s ease-out;
+			transition: color 0.25s ease-out;
+	color:#21a97e;
+	outline: none;
+	text-decoration:none;
+	}
+	a:hover { 
+		color:#000;
+		}
+img { 
+	display:block;
+	}
+p {
+	margin:1em 0;
+	}
+
+
+
+/* Loading
+*****************************************************************/
+
+#loading {
+	width: 100%;
+	height: 100%;
+	background: #a2d6d3; /* Old browsers */
+	background: -moz-linear-gradient(top, #a2d6d3 35%, #ffffff 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #a2d6d3 35%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #a2d6d3 35%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a2d6d3', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+#jpreSlide, #jpreLoader {
+	width: 100%;	
+}
+#jprePercentage {
+	background: url("../img/loading.png") no-repeat;
+	width: 180px;
+	height:144px !important;
+	color: white;
+	margin: 0 auto;
+	padding:70px 0 0 60px;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 30px;
+}
+
+
+
+/* Common shared styles
+*****************************************************************/
+
+hr {
+	margin: 0;
+	border: none;
+	height: 3px;
+}
+
+/* Page structure
+*****************************************************************/
+
+#d-slide-1 {
+	position: relative;
+	float: left;
+	height: 100%;
+	z-index:5000;
+}
+.dummy-slide {
+	height: 13.8% !important;
+	font-size: 40px;
+	color: red;
+	width: 1px;
+	float: left;
+	clear: both;
+}
+.dummy-slide[data-slide="4"] {
+	height: 17% !important;
+}
+
+
+html .slide, body .slide {
+	width: 100%;
+	height: 100%;
+	min-height: 800px;
+	position: fixed;
+	display: none;
+}
+
+
+#slide1, #slide12, #slide3, #slide4, #slide5, #slide6{
+	z-index:80;}
+div#slide1 { z-index:80;}
+div#slide2 { z-index:82;}
+div#slide3 { z-index:80;}
+div#slide4 { }
+div#slide5 { }
+div#slide6 { }
+
+
+.slide_all_ground, .slide_all_underground{
+	z-index:10; }
+.slide_all_ground{
+	background: #a2d6d3; /* Old browsers */
+	background: -moz-linear-gradient(top, #a2d6d3 35%, #ffffff 100%);  /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #a2d6d3 35%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #a2d6d3 35%,#ffffff 100%);  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a2d6d3', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+	}
+.slide_all_underground{z-index:15;
+	background:rgba(102,51,255,0.5);}
+
+
+
+
+div#slide0 { z-index:90;}
+div#slide0 #mouse_pointer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	z-index: 50;
+}
+
+
+
+
+/* Nav
+*****************************************************************/
+
+.header {
+	position: fixed;
+	z-index: 999999999999 !important;
+	display: none;
+	-moz-box-sizing: border-box;
+		 box-sizing: border-box;
+	bottom:5%;
+	margin-left:-100px;
+}
+.header .nav {}
+.header .nav .nav_ul {
+	position: relative;
+	margin-left: 0;
+}
+.header .nav .nav_ul li {
+	position: relative; float:left;
+}
+.header .nav .nav_ul li .item {
+	cursor: pointer;
+	width: 18px;
+	height: 18px;
+	margin: 0 8px 0 0;
+	border-radius: 50%;
+	text-indent: -9999px;
+	background: #fff url('../img/nav_pic_h.png');
+	box-shadow: 0 0 7px rgba(0,0,0,.5);
+}
+.header .nav .nav_ul li .item.active,
+.header .nav .nav_ul li .item:hover {
+	box-shadow: 0 0 10px rgba(255,255,255,.9);
+}
+
+.header .nav .nav_ul li:nth-child(1) .item{ background-position: 0 0; }
+	.header .nav .nav_ul li:nth-child(2) .item{ background-position: 0 -18px; }
+	.header .nav .nav_ul li:nth-child(3) .item{ background-position: 0 -36px; }
+	.header .nav .nav_ul li:nth-child(4) .item{ background-position: 0 -54px; }
+	.header .nav .nav_ul li:nth-child(5) .item{ background-position: 0 -72px; }
+	.header .nav .nav_ul li:nth-child(6) .item{ background-position: 0 -90px; }
+.header .nav .nav_ul li:nth-child(1) .item:hover, .header .nav .nav_ul li:nth-child(1) .item.active{ background-position: -18px 0;}
+	.header .nav .nav_ul li:nth-child(2) .item:hover, .header .nav .nav_ul li:nth-child(2) .item.active{ background-position: -18px -18px; background:#0CC;}
+	.header .nav .nav_ul li:nth-child(3) .item:hover, .header .nav .nav_ul li:nth-child(3) .item.active{ background-position: -18px -36px; }
+	.header .nav .nav_ul li:nth-child(4) .item:hover, .header .nav .nav_ul li:nth-child(4) .item.active{ background-position: -18px -54px; }
+	.header .nav .nav_ul li:nth-child(5) .item:hover, .header .nav .nav_ul li:nth-child(5) .item.active{ background-position: -18px -72px; background:#0CC;}
+	.header .nav .nav_ul li:nth-child(6) .item:hover, .header .nav .nav_ul li:nth-child(6) .item.active{ background-position: -18px -90px; }
+
+.header .nav .nav_ul li p {
+	position: absolute;
+	right: -12px;
+	top: -50px;
+	opacity:0;
+	padding: 4px 7px 14px 7px;
+	color: #fff; font-size:12px; text-align:center;
+	white-space: nowrap;
+	background: transparent url('../img/nav-arrow_h.png') 50% 50% no-repeat;
+	}
+.header .nav .nav_ul li:hover p {
+	opacity:1;
+	}
+
+
+/** page_arrow **/
+.page_link {
+	position: fixed;
+	z-index: 19 !important;
+	display: none; width:100%; background:rgba(0,0,0,.2);
+	-moz-box-sizing: border-box;
+		 box-sizing: border-box;
+	bottom:50%; left:0%; margin-bottom:35px;
+}
+.page_link .page_ul {
+	position: relative;
+	margin-left: 0;
+}
+.page_link .page_ul li {
+	position: relative;
+}
+.page_link .page_ul li .item {
+	cursor: pointer; position:absolute; left:1%;
+	width: 30px; height:70px;
+	opacity:.6;
+	background: url(../img/btn_arrow_leftNav.png);
+}
+.page_link .page_ul li .item.item_right {
+	background: url(../img/btn_arrow_rightNav.png); left:auto; right:1%; }
+
+.page_link .page_ul li .item.active,
+.page_link .page_ul li .item:hover { opacity:1;}
+
+
+
+
+
+
+/* Parallax
+*****************************************************************/
+
+	/* 物件-背景*/
+	.sea_01, .sea_02, .lighthouse, .footer_01, .island_btn, .island_btn_brown, .island_btn_island, .building_01, .building_02, .building_03,
+	.lighthouse, .instrument, .boat_01, .boat_02, .building_btn, .ferriswheel,
+	.footer_underground, .pipeline_black, .pipeline_color, .pipeline_white{
+		position: absolute; display:block; opacity: 1;
+		}
+	.sea_01{
+		width: 2277px;/*4554px*/
+		height:220px; /*440px*/
+		background: url("../img/bg_sea_01.png") no-repeat;
+		background-size: cover;
+		z-index: 1; bottom:80px;
+		}
+	.sea_02{
+		width: 2235px;/*4470px*/
+		height:230px; /*460px*/
+		background: url("../img/bg_sea_02.png") no-repeat;
+		background-size: cover;
+		z-index: 2; bottom:0px;
+		}
+	.footer_01{
+		width: 2445px;/*4890px*/
+		height:160px; /*320px*/
+		background: url("../img/bg_footer.png") no-repeat;
+		background-position:right top;
+		background-size: cover;
+		z-index: 5; bottom:-50px;
+		}
+	.island_btn{
+		right:330px; bottom:20px/*50px*/; z-index:12;
+		}
+	.island_btn_brown{
+		right:330px; bottom:3px; z-index:10; width:200px; height:85px;
+		background:url("../img/btn/island.png") no-repeat;
+		background-position:right top;
+		background-size: cover;
+		}
+
+	.island_btn_island{
+		right:330px; bottom:2px; z-index:11; width:200px; height:173px;
+		background:url("../img/btn/island_island.png") no-repeat;
+		background-position:right top;
+		background-size: cover; display:none;
+		}
+
+	.lighthouse{
+		width: 600px;/*1200px*/
+		height:480px;/*960px*/
+		background: url("../img/lighthouse.png") no-repeat;
+		background-size: cover;
+		z-index: 10; bottom:0px;
+		}
+	.instrument{
+		width: 90px; /*180px*/
+		height:120px;/*240px*/
+		background: url("../img/object_instrument.png") no-repeat;
+		background-size: cover;
+		z-index: 5; bottom:50px;
+		}
+	.boat_01{
+		width: 560px;/*1120px*/
+		height:340px;/*680px*/
+		background: url("../img/object_boat_01.png") no-repeat;
+		background-size: cover;
+		z-index: 5; bottom:30px;
+		}
+	.boat_02{
+		width: 290px;/*580px*/
+		height:150px;/*300px*/
+		background: url("../img/object_boat_02.png") no-repeat;
+		background-size: cover;
+		z-index: 5; bottom:100px;
+		}
+	.building_btn{
+		width: 360px;/*720px*/
+		height:220px;/*440px*/
+		background: url("../img/object_building.png") no-repeat;
+		background-size: cover; cursor:pointer;
+		z-index: 10; bottom:15px;
+		}
+	.ferriswheel{
+		width: 186px;/*372px*/
+		height:186px;/*372px*/
+		background: url("../img/object_ferriswheel.png") no-repeat;
+		background-size: cover;
+		z-index: 1; bottom:420px;
+		}
+	.building_01{
+		width: 3200px;/*4600px*/
+		height:974px; /*1400px*/
+		background: url("../img/bg_building_01.png") no-repeat;
+		background-size: cover;
+		z-index: 2; bottom:60px;
+		}
+	.building_02{
+		width: 3200px;/*4600x*/
+		height:470px; /*675px*/
+		background: url("../img/bg_building_02.png") no-repeat;
+		background-size: cover;
+		z-index: 3; bottom:60px;
+		}
+	.building_03{
+		width: 3200px;/*4600px*/
+		height:230px; /*330px*/
+		background: url("../img/bg_building_03.png") no-repeat;
+		background-size: cover;
+		z-index: 4; bottom:60px;
+		}
+
+
+
+
+	/*** underground ***/
+	.footer_underground{
+		width: 100%; /*3822px 4586px*/
+		height:100%; /*1000px 1200px*/
+		background: url("../img/bg_footer_underground.jpg") no-repeat;
+		background-size:  cover ;
+		z-index: 1; bottom:0px;
+		}
+	.pipeline_black{
+		width: 3862px;/*5310px*/
+		height:800px; /*1100px*/
+		background: url("../img/bg_pipeline_black.png") no-repeat;
+		background-size:  cover ;
+		z-index: 2; top:-105px/*-105*/;
+		}
+	.pipeline_color{
+		width: 3862px;/*5310px*/
+		height:800px; /*1100px*/
+		background: url("../img/bg_pipeline_color.png") no-repeat;
+		background-size:  cover ;
+		z-index: 3; top:-105px;
+		}
+	.pipeline_white{
+		width: 3862px;/*5310px*/
+		height:800px; /*1100px*/
+		background: url("../img/bg_pipeline_white.png") no-repeat;
+		background-size:  cover ;
+		z-index: 4; top:-105px; 
+		}
+
+	.object_all{ 
+		position:relative;
+		width: 3862px;
+		height:800px;}
+
+		.raft_black{
+			position:absolute;
+			background: url(../img/object_raft_black.png) no-repeat 0 0;
+			background-size: cover;
+			width:32px; height:32px;
+		}
+		.raft_black:nth-child(1){ top:330px; left:160px;}
+		.raft_black:nth-child(2){ top:228px; left:320px;}
+		.raft_black:nth-child(3){ top:698px; left:270px;}
+		.raft_black:nth-child(4){ top:472px; left:760px;}
+		.raft_black:nth-child(5){ top:483px; left:1883px;}
+		.raft_black:nth-child(6){ top:485px; left:1930px;}
+		.raft_black:nth-child(7){ top:570px; left:2540px;}
+
+		.raft_green{
+			position:absolute;
+			background: url(../img/object_raft_green.png) no-repeat 0 0;
+			background-size: cover;
+			width:64px; height:64px;
+		}
+		.raft_green:nth-child(1){ top:80px; left:295px;}
+		.raft_green:nth-child(2){ top:445px; left:1325px;}
+		.raft_green:nth-child(3){ top:535px; left:3480px;}
+
+		.raft_yellow{
+			position:absolute;
+			background: url(../img/object_raft_yellow.png) no-repeat 0 0;
+			background-size: cover;
+			width:68px; height:68px;
+		}
+		.raft_yellow:nth-child(1){ top:500px; left:2130px;}
+
+		.raft_blue{
+			position:absolute;
+			background: url(../img/object_raft_blue.png) no-repeat 0 0;
+			background-size: cover;
+			width:68px; height:68px;
+		}
+		.raft_blue:nth-child(1){ top:390px; left:295px;}
+		.raft_blue:nth-child(2){ top:390px; left:1420px;}
+
+		.dripping_color {
+			width: 42px;
+			height:42px;
+			position: absolute;
+		}
+		.dripping_color .toggle-btn {
+			width: 14px;
+			height:14px;
+			position: absolute;
+			border-radius: 100%;
+		}
+		.dripping_color .drop {
+			width: 14px;
+			height:14px;
+			border-top-left-radius: 100%;
+			border-top-right-radius: 100%;
+			border-bottom-left-radius: 100%;
+		}
+
+		.dripping_color.N01{ top:175px; left:567px;}
+		.dripping_color.N01 .toggle-btn,
+		.dripping_color.N01 .drop { background-color:#f7c8d2; }
+
+		.dripping_color.N02{ top:465px; left:1653px;}
+		.dripping_color.N02 .toggle-btn,
+		.dripping_color.N02 .drop { background-color:#b8e2f8; }
+
+		.dripping_color.N03{ top:345px; left:2113px;}
+		.dripping_color.N03 .toggle-btn,
+		.dripping_color.N03 .drop { background-color:#f7c8d2; }
+
+
+
+
+	/* 物件-雲*/
+	.cloud_group{
+		position: absolute; top:0px;
+		}
+	.cloud_group .cloud_white{
+		position: absolute; z-index:2; bottom:0px;
+		background: url("../img/object_cloud_white.png") no-repeat;
+		background-size: cover;
+		}
+	.cloud_group .cloud_blue{
+		position: absolute; z-index:2; bottom:0px;
+		background: url("../img/object_cloud_blue.png") no-repeat;
+		background-size: cover;
+		}
+	.cloud_group .cloud_line{
+		position: absolute; z-index:1; top:0px; left:50%; margin-left:-1px;
+		background: url("../img/object_cloud_line.gif") no-repeat;
+		background-size: cover; width:2px; height:80%;
+		}
+
+	.cloud_group.A01, .cloud_group.A01 .cloud_white{ width:180px;}
+	.cloud_group.A01{ height:200px; z-index:3;}
+	.cloud_group.A01 .cloud_white{ height:100px;}
+
+	.cloud_group.A02, .cloud_group.A02 .cloud_blue{ width:130px; }
+	.cloud_group.A02{ height:170px; z-index:2; left:5%;}
+	.cloud_group.A02 .cloud_blue { height:80px;}
+
+	.cloud_group.A03, .cloud_group.A03 .cloud_white{ width:160px;}
+	.cloud_group.A03{ height:220px; z-index:1; left:11%;}
+	.cloud_group.A03 .cloud_white{ height:89px;}
+
+	.cloud_group.B01, .cloud_group.B01 .cloud_white{ width:180px;}
+	.cloud_group.B01{ height:360px; left:68%;}
+	.cloud_group.B01 .cloud_white{ height:100px; }
+
+	.cloud_group.C01, .cloud_group.C01 .cloud_white{ width:280px;}
+	.cloud_group.C01{ height:210px; left:78%;}
+	.cloud_group.C01 .cloud_white{ height:165px;}
+
+	.cloud_group.C02, .cloud_group.C02 .cloud_blue{ width:240px; }
+	.cloud_group.C02{ height:270px; z-index:2; left:85%;}
+	.cloud_group.C02 .cloud_blue { height:148px;}
+
+
+	.cloud_group.D01, .cloud_group.D01 .cloud_blue{ width:150px; }
+	.cloud_group.D01{ height:150px; z-index:1; left:5%;}
+	.cloud_group.D01 .cloud_blue { height:92px;}
+
+	.cloud_group.D02, .cloud_group.D02 .cloud_white{ width:180px;}
+	.cloud_group.D02{ height:170px; z-index:2; left:8%;}
+	.cloud_group.D02 .cloud_white{ height:100px;}
+
+	.cloud_group.E01, .cloud_group.E01 .cloud_white{ width:280px;}
+	.cloud_group.E01{ height:210px; left:48%;}
+	.cloud_group.E01 .cloud_white{ height:165px;}
+
+	.cloud_group.E02, .cloud_group.E02 .cloud_blue{ width:240px; }
+	.cloud_group.E02{ height:270px; z-index:2; left:55%;}
+	.cloud_group.E02 .cloud_blue { height:148px;}
+
+
+	.cloud_group.F01, .cloud_group.F01 .cloud_blue{ width:150px; }
+	.cloud_group.F01{ height:130px; z-index:1; left:5%;}
+	.cloud_group.F01 .cloud_blue { height:92px;}
+
+	.cloud_group.F02, .cloud_group.F02 .cloud_white{ width:180px;}
+	.cloud_group.F02{ height:150px; z-index:2; left:8%;}
+	.cloud_group.F02 .cloud_white{ height:100px;}
+
+
+
+
+	/* 物件-老鷹*/
+	.eagle{
+		position: absolute;
+		background: url(../img/object_eagle.png) no-repeat 0 0;
+		background-size: cover;
+		}
+	.eagle.N01{
+		width:25px; height:35px; left:10%; top:30%;}
+	.eagle.N02{
+		width:30px; height:45px; left:60%; top:15%;}
+	.eagle.N03{
+		width:40px; height:60px; left:75%; top:25%;}
+	.eagle.N04{
+		width:50px; height:75px; left:15%; top:25%;}
+	.eagle.N05{
+		width:30px; height:45px; left:35%; top:10%;}
+	.eagle.N06{
+		width:36px; height:54px; left:50%; top:40%;}
+	.eagle.N07{
+		width:25px; height:35px; left:80%; top:30%;}
+
+
+
+
+	/* 物件-其他*/
+	#fountain-canvas{
+		position:absolute; left:890px; bottom:86px;}
+	.smoke_01, .smoke_02{
+		position:absolute; z-index:2;
+		height:500px;
+		}
+	.smoke_pic{display:none;}
+
+
+
+
+
+
+/****  web_to: layout ****************************/
+
+/* 浮島相關 *****/
+/* -- Island -- */
+.island_all{
+	position: fixed;
+	z-index: 20;
+	overflow:hidden;
+	width:460px;
+	height:400px;
+	right:50%;
+	bottom:50%;
+	margin:0 -230px -200px 0;
+}
+
+
+/* -- Island wrap -- */
+.island_wrap{
+	position:absolute;
+	width:100%; height:100%
+}
+.island_brown, .island_black{
+	position:relative;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:100%;
+	width: 100%;
+	height: 100%;
+}
+.island_brown{
+	background-image:url(../img/island_tree_brown.png);
+}
+.island_black{
+	background-image:url(../img/island_tree_black.png);
+}
+
+
+/* 浮島-水管 */
+.pipeline {
+	position:absolute;
+	z-index: 5;
+	width: 42px;/*110*/
+	height:42px;/*110*/
+	top: 72% /*50%*/;
+	left:42.7%;
+}
+.pipeline div {
+	position:relative;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:100%;
+	width: 100%;
+	height: 100%;
+}
+.pipeline div .pipeline01, .pipeline div .pipeline02 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.pipeline div .pipeline01 {
+	background-image: url(../img/island_pipeline_01.png);
+}
+.pipeline div .pipeline02 {
+	background-image: url(../img/island_pipeline_02.png);
+}
+
+
+/* 浮島-石頭 */
+.stone{
+	position:absolute;
+	z-index: 1;
+	width: 170px;/*440*/
+	height:116px;/*300*/
+	top: 60% /*38%*/;
+	left:18%;
+}
+.stone div {
+	position:relative;
+	width: 100%;
+	height: 100%;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+.stone div .stone_brown01, .stone div .stone_brown02, .stone div .stone_brown03,
+.stone div .stone_black01, .stone div .stone_black02, .stone div .stone_black03 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.stone div .stone_brown01 {
+	background-image: url(../img/island_brown_stone_01.png);
+}
+.stone div .stone_brown02 {
+	background-image: url(../img/island_brown_stone_02.png);
+}
+.stone div .stone_brown03 {
+	background-image: url(../img/island_brown_stone_03.png);
+}
+.stone div .stone_black01 {
+	background-image: url(../img/island_black_stone_01.png);
+}
+.stone div .stone_black02 {
+	background-image: url(../img/island_black_stone_02.png);
+}
+.stone div .stone_black03 {
+	background-image: url(../img/island_black_stone_03.png);
+}
+
+
+/* 浮島-水滴 */
+.dripping {
+	width: 16px;
+	height:50%;
+	position: absolute;
+	z-index:-1;
+	left:40.6%;
+	top: 73.8%/*56.8%*/;
+	color:#343F50;
+}
+.dripping .toggle-btn {
+	width: 6px;/*16*/
+	height:6px;/*16*/
+	background-color:#343F50;
+	position: absolute;
+	border-radius: 100%;
+}
+.dripping .drop {
+	width: 6px;/*16*/
+	height:6px;/*16*/
+	background-color:#343F50;
+	border-top-left-radius: 100%;
+	border-top-right-radius: 100%;
+	border-bottom-left-radius: 100%;
+}
+
+
+/* 浮島-縮小 */
+.island_all_zoomout{
+	width: 280px;
+	height:243px;
+	margin: 0 -240px -121.5px 0;
+}
+.pipeline_zoomout {
+	width: 25.5px;
+	height:25.5px;
+}
+.stone_zoomout{
+	width: 103px;
+	height:70px;
+}
+.dripping .toggle-btn_zoomout {
+	width: 6px;
+	height:6px;
+}
+.dripping .drop_zoomout { 
+	width: 6px;
+	height:6px;
+}
+
+
+
+
+/* 滑鼠與箭頭 *****/
+.icon-wrapper {
+	display: inline-block;
+	vertical-align: middle;
+	position: absolute;
+}
+.mouse-icon {
+	position: relative;
+}
+.mouse-icon .mouse-area {
+	width: 18px;
+	height: 28px;
+	background: #fff;
+	border-radius: 20px;
+	position: relative;
+	margin-bottom: 3px;
+}
+.mouse-icon .mouse-area:after {
+	content: "";
+	background:rgba(95,200,145,1);
+	width: 4px;
+	height: 6px;
+	position: absolute;
+	top: 5px;
+	left: 50%;
+	margin-left: -2px;
+	border-radius: 20px;
+}
+.mouse-icon .arrow {
+	width: 6px;
+	height: 6px;
+	display: block;
+	border-bottom: 2px solid #fff;
+	border-right: 2px solid #fff;
+	position: relative;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+/*** ***/
+::-moz-selection {
+	background:#0CC;
+	color:#ffffff;
+	text-shadow:none
+}
+::selection {
+	background: #0CC;
+	color: #ffffff;
+	text-shadow: none
+}

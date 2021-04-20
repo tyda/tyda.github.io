@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	
+	<!-- mobile meta tag -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>map object</title>
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css"><!-- bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap-slider.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="js/bootstrap.min.js"></script><!-- bootstrap -->
+	<script src="js/bootstrap-slider.min.js"></script>
+	<script src="js/tab.js"></script>
+ 
+	<style>
+body {
+	background:#f4f0f1;
+	padding:100px 200px 0 200px;
+	width: 100%; 
+}
+	</style>
+</head>
+<body>
+
+
+<div class="switch_aqi">
+	<input type="checkbox">
+	<label>
+		<span class="data-on">PM2.5</span>
+		<span class="data-off">AQI</span>
+		<div></div>
+	</label>
+</div>
+
+
+<div class="btn_map"><a href="#" class="icon_gps"></a></div>
+
+
+<div class="box_map_object" style="margin:0 0 0 200px;">
+	<div class="btn_map"><a href="#" class="icon_layer"></a></div>
+	<div class="div_layer">
+		<span class="icon_close icon_layer"></span>
+		<h5>圖層設定</h5>
+		<ul class="layer">
+			<li>
+				台中市空品測站
+				<div class="switch">
+					<input type="checkbox" checked>
+					<label>
+						<span class="glyphicon glyphicon-ok"></span>
+						<span class="glyphicon glyphicon-remove"></span>
+						<div></div>
+					</label>
+				</div>
+			</li>
+			<li>
+				環保署空品測站
+				<div class="switch">
+					<input type="checkbox">
+					<label>
+						<span class="glyphicon glyphicon-ok"></span>
+						<span class="glyphicon glyphicon-remove"></span>
+						<div></div>
+					</label>
+				</div>
+			</li>
+			<li>
+				台電空品測站
+				<div class="switch">
+					<input type="checkbox" checked>
+					<label>
+						<span class="glyphicon glyphicon-ok"></span>
+						<span class="glyphicon glyphicon-remove"></span>
+						<div></div>
+					</label>
+				</div>
+			</li>
+			<li>
+				連續自動監測設施
+				<div class="switch">
+					<input type="checkbox" checked>
+					<label>
+						<span class="glyphicon glyphicon-ok"></span>
+						<span class="glyphicon glyphicon-remove"></span>
+						<div></div>
+					</label>
+				</div>
+			</li>
+			<li>
+			濃度表
+			<div class="switch">
+				<input type="checkbox" checked>
+				<label>
+					<span class="glyphicon glyphicon-ok"></span>
+					<span class="glyphicon glyphicon-remove"></span>
+					<div></div>
+				</label>
+			</div>
+			</li>
+			<li>
+				風力縣
+				<div class="switch">
+					<input type="checkbox">
+					<label>
+						<span class="glyphicon glyphicon-ok"></span>
+						<span class="glyphicon glyphicon-remove"></span>
+						<div></div>
+					</label>
+				</div>
+			</li>
+			<li>
+				公車點位
+				<div class="switch">
+					<input type="checkbox">
+					<label>
+						<span class="glyphicon glyphicon-ok"></span>
+						<span class="glyphicon glyphicon-remove"></span>
+						<div></div>
+					</label>
+				</div>
+			</li>
+			<li>
+				公共自行車點位
+				<div class="switch">
+					<input type="checkbox">
+					<label>
+						<span class="glyphicon glyphicon-ok"></span>
+						<span class="glyphicon glyphicon-remove"></span>
+						<div></div>
+					</label>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+
+
+<div class="box_map_object">
+	<div class="btn_map"><a href="#" class="icon_eye"></a></div>
+	<div class="div_map_zoom">
+		<span class="icon_close icon_eye"></span>
+		<img src="images/img_map.jpg">
+	</div>
+</div>
+
+
+
+
+<div class="aqi_range">
+	<h5>AQI濃度透明度</h5>
+	<input id="aqi_opacity" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="64"/>
+</div>
+
+
+
+
+</body>
+</html>
+
+
+
+
+<script type="text/javascript">
+$(".icon_layer").bind("click", function(){
+	$(".div_layer").fadeToggle(400);
+	});
+$(".icon_eye").bind("click", function(){
+	$(".div_map_zoom").fadeToggle(400);
+	});
+
+$('#aqi_opacity').slider({
+	formatter: function(value) {
+		return value;
+		//return 'Current value: ' + value;
+	}
+});
+</script>

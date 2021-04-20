@@ -1,0 +1,27 @@
+	.primary_menu{ height:50px; text-align:center; clear:both; /*font-family:'microsoft yahei';*/}
+		.primary_menu ul{ float:; width:839px; margin:0 auto;}
+			.primary_menu li{ float:left; height:50px; position:relative;}
+			.primary_menu li.line_off{ background:none;}
+			.primary_menu a{ display:block; float:left; text-decoration:none; height:40px; padding-top:10px; line-height:18px; font-size:15px; color:#fff; width:119px;
+								blr:expression(this.onFocus=this.blur()); outline:none; position:relative; text-shadow:2px 1px 2px rgba(0,0,0,.4);}
+			.primary_menu a:hover, .primary_menu .active a{ color:#fff; background:#215d00; border-radius:5px; font-weight:700;}
+			.primary_menu li.sfhover a{ background:#215d00; border-radius:5px; padding:20px 0 0 0; margin:-13px 0 0 0; font-weight:700;}
+			.primary_menu a span{ font-size:10px; color:#b8ff00; -webkit-text-size-adjust:none; line-height:12px; height:12px; display:block; font-weight:300;
+							cursor:pointer; position:relative; overflow-y:hidden;}
+			.primary_menu .n{ background:rgba(255,255,255,.3); width:1px; height:50px; float:left;}
+
+				.primary_menu li ul{ display:none; position:absolute; top:50px; width:240px; padding:10px 0; background:#215d00; border-radius:0 5px 5px 5px; z-index:11;}
+				.primary_menu li ul li{ line-height:25px; height:25px; margin:0; background-image:none; position:relative; z-index:2;}
+				.primary_menu li ul a, .primary_menu li.active ul a, .primary_menu li.sfhover ul a{ float:none; width:200px; height:auto; margin:0px 7px; padding:2px 13px;
+										color:#fff; font-size:14px; font-weight:300; text-align:left; background:none; border-radius:3px; text-shadow: none;}
+				.primary_menu li ul a:hover{ background:#5a9339; border-radius:3px; color:#fff; font-weight:300;}
+
+					.primary_menu li ul li ul { position:absolute; padding:0 0 0 15px; width:225px; }
+					.primary_menu li ul li ul a, .primary_menu li.active ul li ul a, .primary_menu li.sfhover ul li ul a{
+						float:none; width:185px; height:auto; margin:0px 7px; padding:2px 13px; color:#fff; font-size:12px; font-weight:300; text-align:left; background:none; border-radius:3px; text-shadow: none;}
+					.primary_menu li ul li ul a:hover{ background:#47782b; border-radius:3px; color:#fff; font-weight:300;}
+					.primary_menu li ul li ul li{ line-height:25px; height:25px;}
+
+
+	button.dl-trigger{ display:none;}
+	.dl-back{ display:none;}

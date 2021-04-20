@@ -1,0 +1,35 @@
+/* { behavior: url(includes/iepngfix.htc) } */
+
+#main {
+	Z-INDEX: 1;
+	HEIGHT: 0px;
+	WIDTH: 100px;
+	POSITION: absolute;
+	margin: 0 auto;
+	visibility: visible;
+	padding:0px; left:50%; margin:0 0 0 -480px;
+}
+
+body {
+	background-image: url(../images/bgbg.jpg);
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+
+.link-news:hover ,.link-news:visited ,.link-news:link
+{font-size: 11px; height:10px; color:#78746e; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 130%;}
+.link-news:hover
+{font-size: 11px; height:10px; color:#e3dcd1; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 130%;}
+
+
+.font_15-titlepx {font-size: 15px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #fde6be; line-height: 170%;}
+.font_12-mainpx {font-size: 12px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #9a9387; line-height: 170%;}
+
+.font_12-orangepx {font-size: 12px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #dc7c29; line-height: 150%;}
+
+.font_11-garypx {font-size: 11px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #dddddd; line-height: 140%;}
+.font_10-garypx {font-size: 10px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #dddddd; line-height: 140%;}
+.font_9-garypx {font-size: 9px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #dddddd; line-height: 140%;}

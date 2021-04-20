@@ -1,0 +1,99 @@
+#flash {
+	Z-INDEX: 1;
+	WIDTH: 100%;
+	POSITION: absolute;
+	visibility: visible;
+	margin-left: 0px;
+	margin-top: 87px;
+}
+
+#flash_2 {
+	Z-INDEX: 1;
+	WIDTH: 743px;
+	POSITION: absolute;
+	visibility: visible;
+	margin-left: 0px;
+	margin-top: 116px;
+}
+
+#main {
+	Z-INDEX: 2;
+	WIDTH: 100%;
+	POSITION: absolute;
+	visibility: visible;
+	margin-left: 0px;
+	margin-top: 206px;
+}
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+
+
+.link-down-1:hover ,.link-down-1:visited ,.link-down-1:link
+{font-size: 10px; height:10px; color:#7d916a; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 120%;}
+.link-down-1:hover
+{font-size: 10px; height:10px; color:#62a128; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 120%;}
+
+.link-down:hover ,.link-down:visited ,.link-down:link
+{font-size: 11px; height:10px; color:#7d916a; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 140%;font-weight: bold;}
+.link-down:hover
+{font-size: 11px; height:10px; color:#3c6516; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 140%;font-weight: bold;}
+
+.link-pp:hover ,.link-pp:visited ,.link-pp:link
+{font-size: 13px; height:10px; color:#5c932e; padding:1px; text-decoration: none; line-height: 150%;font-weight: bold;}
+.link-pp:hover
+{font-size: 13px; height:10px; color:#406224; padding:1px; text-decoration: none; line-height: 150%;font-weight: bold;}
+
+
+.link-right:hover ,.link-right:visited ,.link-right:link
+{font-size: 11px; height:10px; color:#999999; padding:1px; text-decoration: none; line-height: 150%;}
+.link-right:hover
+{font-size: 12px; height:10px; color:#2c3907; padding:1px; text-decoration: none; line-height: 150%;font-weight: bold;}
+
+.link-menu:hover ,.link-menu:visited ,.link-menu:link
+{font-size: 12px; height:10px; color:#5c932e; padding:1px; text-decoration: none; line-height: 150%;}
+.link-menu:hover
+{font-size: 12px; height:10px; color:#406224; padding:1px; text-decoration: none; line-height: 150%;font-weight: bold;}
+
+.link-news:hover ,.link-news:visited ,.link-news:link
+{font-size: 12px; height:10px; color:#8e8e8e; padding:1px; text-decoration: none; line-height: 150%;}
+.link-news:hover
+{font-size: 12px; height:10px; color:#719338; padding:1px; text-decoration: none; line-height: 150%;}
+
+link-no:hover ,.link-no:visited ,.link-no:link
+{font-size: 10px; height:10px; color:#838383; padding:1px; text-decoration: none; line-height: 130%;}
+.link-no:hover
+{font-size: 10px; height:10px; color:#71ae5c; padding:1px; text-decoration: none; line-height: 130%;font-weight: bold;}
+
+
+
+
+.font_18-brownpx {font-size: 18px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #5b4836; line-height:150%;font-weight: bold;}
+.font_18-blackpx {font-size: 18px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #000000; line-height:150%;font-weight: bold;}
+
+
+.font_15-brownpx {font-size: 15px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #5b4836; line-height:160%;font-weight: bold;}
+.font_15-blackpx {font-size: 15px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #000000; line-height:160%;font-weight: bold;}
+
+.font_12-rightpx {font-size: 12px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #2c3907; line-height:170%;font-weight: bold;}
+.font_12-mainpx {font-size: 12px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #858585; line-height:170%;}
+.font_12-brownpx {font-size: 12px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #9c836a; line-height:140%;font-weight: bold;}
+.font_12-greenpx {font-size: 12px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #5c932e; line-height:140%;font-weight: bold;}
+
+
+.font_11-redpx {font-size: 11px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #cf3939; line-height:170%;}
+.font_11-mainpx {font-size: 11px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #858585; line-height:170%;}
+.font_11-greenpx {font-size: 11px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #abb99e; line-height:130%;}
+.font_11-green-1px {font-size: 11px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #7d916a; line-height:130%;}
+.font_11-graypx {font-size: 11px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #b2b2b2; line-height:160%;}
+.font_11-whitepx {font-size: 11px; text-decoration: none; color: #ffffff; line-height:120%;font-weight: bold;}
+
+
+.font_10-greenpx {font-size: 10px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #7d916a; line-height:100%;}
+.font_10-downpx {font-size: 10px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #8e8e8e; line-height:150%;}
+

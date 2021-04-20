@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+
+	ul ,li{	margin:0; padding:0; list-style-type: none; float:left;}	
+	
+
+
+	#imgList{
+		/*position:absolute;*/
+		margin-top:10px;
+		margin-left:3px;
+		padding-bottom:10px;
+		overflow:auto;}
+	#imgList span{
+		float:left;
+		display:block;
+		width:22px;
+		margin:2px;
+		line-height:50px;}
+	
+	#list img{width:95px; height:70px;}
+	
+	#list{
+		position:relative;
+		float:left;
+		height:158px;
+		width:770px;
+		margin:2px 5px;
+		overflow:hidden;
+		background:#f7f7f7;
+		border:solid 1px #e5e5e5;}
+	#list ul{ 
+	    position:absolute;
+		width:650px;
+		left:30px;
+		top:25px;
+		white-space: nowrap;/* 不斷行 */}
+	#list ul li{
+		display: inline; /* 水平排列 */
+		margin:0px 0px 35px 20px;
+		padding:10px 10px 6px 10px; 
+		background:#fefefe;
+		border:solid 1px #d9d9d9;
+		text-align:center;font-weight: normal;
+	    font-size:12px;color:#8b8b8b;line-height:150%;
+	}
+	#list ul li.on{border:solid 1px #ec720f;font-size:12px;color:#f07515;font-weight: bold;}	
+	#list ul li img {display: inline-block;	/* 水平內顯示為區塊 */}
+	
+	/* 秀大圖 */
+	#imgB{border:solid 7px #fff;}
+	/* 滑入顯示圖片區塊 */
+	#overImg{position:absolute; top:-99999; left:-99999; display:none; z-index:100; border:solid 5px #666; padding:5px; background:#fff;}
+
+

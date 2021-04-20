@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="zh-tw">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<title>淡入淡出式的切換影像</title>
+<style type="text/css"> 
+	a img { border: none;}
+
+	#abgne_fade_pic { position:relative; width:851px; height:360px;}
+	#abgne_fade_pic .mask{ position:absolute; z-index:50;}
+	#abgne_fade_pic a.ad { position: absolute; }
+	#abgne_fade_pic .control { position:absolute; right:10px; bottom:10px; }
+	#abgne_fade_pic .control a { display:none; /*display:inline-block;*/}
+	#abgne_fade_pic .control a.on {}
+
+
+
+
+
+
+</style>
+<script type="text/javascript"> 
+	$(function(){
+		var $ad = $('#abgne_fade_pic a.ad'),
+			showIndex = 0,			// 預設要先顯示那一張
+			fadeOutSpeed = 1600,	// 淡出的速度
+			fadeInSpeed = 2000,		// 淡入的速度
+			defaultZ = 10,			// 預設的 z-index
+			isHover = false,
+			timer, speed = 4600;	// 計時器及輪播切換的速度
+		
+		// 先把其它圖片的變成透明
+		$ad.css({
+			opacity: 0,
+			zIndex: defaultZ - 1
+		}).eq(showIndex).css({
+			opacity: 1,
+			zIndex: defaultZ
+		});
+		
+		// 組出右下的按鈕
+		var str = '';
+		for(var i=0;i<$ad.length;i++){
+			str += '<a href="#">' + (i + 1) + '</a>';
+		}
+		var $controlA = $('#abgne_fade_pic').append($('<div class="control">' + str + '</div>').css('zIndex', defaultZ + 1)).find('.control a');
+ 
+		// 當按鈕被點選時
+		// 若要變成滑鼠滑入來切換時, 可以把 click 換成 mouseover
+		$controlA.click(function(){
+			// 取得目前點擊的號碼
+			showIndex = $(this).text() * 1 - 1;
+			
+			// 顯示相對應的區域並把其它區域變成透明
+			$ad.eq(showIndex).stop().fadeTo(fadeInSpeed, 1, function(){
+				if(!isHover){
+					// 啟動計時器
+					timer = setTimeout(autoClick, speed);
+				}
+			}).css('zIndex', defaultZ).siblings('a').stop().fadeTo(fadeOutSpeed, 0).css('zIndex', defaultZ - 1);
+			// 讓 a 加上 .on
+			$(this).addClass('on').siblings().removeClass('on');
+ 
+			return false;
+		}).focus(function(){
+			$(this).blur();
+		}).eq(showIndex).addClass('on');
+ 
+		$ad.hover(function(){
+			isHover = true;
+			// 停止計時器
+			clearTimeout(timer);
+		}, function(){
+			isHover = false;
+			// 啟動計時器
+			timer = setTimeout(autoClick, speed);
+		})
+		
+		// 自動點擊下一個
+		function autoClick(){
+			if(isHover) return;
+			showIndex = (showIndex + 1) % $controlA.length;
+			$controlA.eq(showIndex).click();
+		}
+		
+		// 啟動計時器
+		timer = setTimeout(autoClick, speed);
+	});
+</script>
+</head>
+ 
+<body>
+	<div id="abgne_fade_pic"><img src="images/main/mask_main_bg.png" class="mask"/>
+		<a href="#" class="ad"><img src="images/slider/banner/01_01.jpg" /></a>
+		<a href="#" class="ad"><img src="images/slider/banner/03.jpg" /></a>
+		<a href="#" class="ad"><img src="images/slider/banner/03_01.jpg" /></a>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+/* { behavior: url(includes/iepngfix.htc) } */
+
+
+.link-news:hover ,.link-news:visited ,.link-news:link
+{font-size: 11px; height:10px; color:#78746e; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 130%;}
+.link-news:hover
+{font-size: 11px; height:10px; color:#e3dcd1; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 130%;}
+
+.link-no:hover ,.link-no:visited ,.link-no:link
+{font-size: 9px; height:10px; color:#dddddd; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 100%;}
+.link-no:hover
+{font-size: 9px; height:10px; color:#ffffff; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 100%;}
+
+.link-menu:hover ,.link-menu:visited ,.link-menu:link
+{font-size: 12px; height:10px; color:#9a9387; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 130%;}
+.link-menu:hover
+{font-size: 12px; height:10px; color:#fde6be; padding:1px; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; line-height: 130%;}
+
+
+
+.font_15-titlepx {font-size: 15px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #fde6be; line-height: 170%;}
+.font_12-mainpx {font-size: 12px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #9a9387; line-height: 170%;}
+
+.font_12-orangepx {font-size: 12px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #dc7c29; line-height: 150%;}
+
+.font_11-garypx {font-size: 11px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #dddddd; line-height: 140%;}
+.font_10-garypx {font-size: 10px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #dddddd; line-height: 140%;}
+.font_9-garypx {font-size: 9px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #dddddd; line-height: 140%;}
+.font_9-gary-1px {font-size: 9px; text-decoration: none; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: #414141; line-height: 100%;}

@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	align:center;
+	margin: 0 auto;
+	font-size: 12px; color: #777777; line-height:150%;
+}
+
+
+td {
+	font-size: 12px; color: #777777; line-height:150%;
+}
+
+.font_13-pinkpx {color: #c94b8a; font-weight: bold;}
+
+a:link, a:visited, a:active 
+{color:#8b8d86; text-decoration: none; }
+a:hover
+{color:#0288ce; text-decoration: none; font-weight: bold;}

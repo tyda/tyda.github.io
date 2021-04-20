@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-EN">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>menu</title>
+<head>
+
+<style type="text/css">
+
+ul#left_menu, ul#left_menu ul{ list-style-type:none; margin:0; padding:0; width:132px;}
+	ul#left_menu a{ display:block; text-decoration:none;}
+	ul#left_menu li{}
+		ul#left_menu li a{ font-size:21px; font-family:"華康儷宋 Std W5"; color:#888; line-height:25px;
+							border-bottom:1px solid #ececec; padding:8px 15px;}
+		ul#left_menu li a:hover, ul#left_menu li a.stay{ color:#ff7300;}
+		ul#left_menu li ul li a{ font-size:13px; font-family:"微軟正黑體"; color:#999; line-height:10px;
+								padding:10px 15px; }
+		ul#left_menu li ul li a:hover, ul#left_menu li ul li a.stay{ color:#000; font-weight:bold;}
+		ul#left_menu li ul li a span{ float:right; width:15%;}
+
+</style>
+
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+
+	<ul id="left_menu">
+		<li><a href="#" class="stay">計畫說明</a>
+			<ul>
+				<li><a href="#" class="stay">計畫緣起</a></li>
+				<li><a href="#">計畫內容</a></li>
+				<li><a href="#">計畫目的</a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="stay">西方媒材</a>
+			<ul>
+				<li><a href="#">PivotX</a></li>
+				<li><a href="#">WordPress</a></li>
+			</ul>
+		</li>
+		<li><a href="#">東方媒材</a>
+			<ul>
+				<li><a href="#" class="stay">媒材類型</a></li>
+				<li><a href="#">全部<span><input type="checkbox" /></span></a></li>
+				<li><a href="#">書法<span><input type="checkbox" /></span></a></li>
+				<li><a href="#">水墨<span><input type="checkbox" /></span></a></li>
+				<li><a href="#">膠彩畫<span><input type="checkbox" /></span></a></li>
+			</ul>
+		</li>
+		<li><a href="#">版畫</a>
+			<ul>
+				<li><a href="#">Apple</a></li>
+				<li><a href="#">Nikon</a></li>
+			</ul>
+		</li>
+		<li><a href="#">設計</a></li>
+		<li><a href="#">立體作品</a></li>
+		<li><a href="#" class="stay">作品查詢</a></li>
+		<li><a href="#">進階查詢</a></li>
+		<li><a href="#">出租申請與說明</a></li>
+		<li><a href="#" class="stay">訊息列表</a></li>
+	</ul>
+
+
+
+</body>
+</html>
+
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript">
+	function initMenu() {
+		$('#left_menu ul').hide();
+		$('#left_menu ul:first').show();
+		$('#left_menu li a').click(
+		function() {
+			$(this).next().slideToggle('normal');	
+			}
+		);
+	}
+	$(document).ready(function() {initMenu();});
+    </script>

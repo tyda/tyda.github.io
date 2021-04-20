@@ -1,0 +1,93 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>jQuery Wookmark 瀑布流布局 &raquo; 在线演示 - 前端开发仓库</title>
+<meta name="description" content="An very basic example of how to use the Wookmark jQuery plug-in.">
+<meta name="author" content="Christoph Ono">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="css/layout.css">
+
+<!--
+<style type="text/css">
+html{background-color:#ccc;}
+
+#index_work_main{padding:30px 0; margin:0 auto; width:920px;}
+#tiles{position:relative;margin:0;list-style-type:none;}
+	#tiles li{display:none; width:168px; padding:5px; border-radius:2px; background-color:#efefef; cursor:pointer;}
+	#tiles li img{display:block; width:168px;}
+	#tiles li p{margin:7px 7px 10px 7px; color:#888; font-size:12px;}
+	#tiles li p span{display:block; font-weight:bold;}
+	#tiles li:hover{background-color:#fc5cca;}
+	#tiles li:hover p{ color:#fff;}
+
+</style>-->
+
+
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+<div id="container">
+
+
+	<div id="index_work_main" role="index_work_main">
+		<ul id="tiles">
+			<li><img src="images/pic_work/pic_work01.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work02.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work03.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work04.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work05.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work06.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work07.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work08.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work09.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work01.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work02.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work03.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work04.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work05.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work06.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work07.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work08.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work09.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work01.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work02.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work03.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work04.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work05.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work06.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work07.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work08.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+			<li><img src="images/pic_work/pic_work09.jpg"><p><span>作品名稱作品名稱</span>作者大名</p></li>
+		</ul>
+	</div>
+
+</div>
+
+
+
+
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/jquery.wookmark.js"></script>
+<script>
+$(document).ready(new function() {
+	var options = {
+		autoResize: false,/*true*/
+		container: $('#index_work_main'),
+		offset: 8,
+		itemWidth: 178
+	};
+	var handler = $('#tiles li');
+	handler.wookmark(options);
+	handler.click(function(){
+		var newHeight = $('img', this).height() + Math.round(Math.random()*300+30);
+		$(this).css('height', newHeight+'px');
+		handler.wookmark();
+	});
+});
+</script>
+</body>
+</html>

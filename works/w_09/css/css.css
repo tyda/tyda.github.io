@@ -1,0 +1,150 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+
+body {
+	align:left;
+	margin: 0px 0px 0px 0px;
+	height: 100%;
+	width: 100%;
+	background: url(../images/bgbg.gif) repeat-x left top;}
+
+#flash {
+	/*left: 1px;
+	top: 0px;*/
+	width: 100%;
+	margin: 0px auto;
+	visibility: visible;
+	position:absolute;
+	z-index:50;}
+
+
+#wrapper {
+	width: 1100px;
+	margin: 0px auto;
+	text-align:left;
+	position:absolute;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	line-height: 150%;
+	font-size:12px;
+	color:#666;
+	background: url(../images/left_bg.gif) no-repeat left top;}
+
+
+/*---------------------------------------------------------------------------------------------------------------------*/	
+
+#left_wrapper {
+	width: 200px;
+	height: 100%;
+	float: left;
+	}
+	
+	#left {
+	text-align: left;
+	background:#d0e6d1;
+	padding: 35px 8px 30px 8px;
+	}
+	 	#left_title {height: 56px;}
+		.title01 {background: url(../images/left_title/left_title-01.png);}
+		.title02 {background: url(../images/left_title/left_title-02.png);}
+		.title03 {background: url(../images/left_title/left_title-03.png);}
+		.title04 {background: url(../images/left_title/left_title-04.png);}
+		.title05 {background: url(../images/left_title/left_title-05.png);}
+		.title06 {background: url(../images/left_title/left_title-06.png);}
+		.title07 {background: url(../images/left_title/left_title-07.png);}
+		.title08 {background: url(../images/left_title/left_title-08.png);}
+		.title09 {background: url(../images/left_title/left_title-09.png);}
+
+
+
+       #left_menu {
+		width: 160px;}
+       #left_menu ul {
+		margin: 0;
+		padding: 0;}
+       #left_menu li {
+		width: 160px;}
+       #left_menu li a {
+	    display: block;
+		width: 100%;
+		height: 20px;
+		padding: 2px 0px 0px 25px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 13px;
+		color: #405542;
+		text-decoration: none;
+		background: url(../images/left_menu.png) no-repeat left top;}
+       #left_menu li a:hover {
+		font-weight: bold;
+		color: #007303;
+		background: url(../images/left_menu.png) no-repeat 0px -22px;}
+       #left_menu li a.stay {
+		font-weight: bold;
+		color: #007303;
+		background: url(../images/left_menu.png) no-repeat 0px -22px;}
+		
+	/* 子選單
+	-------------------------------------------------------------------------------------------------------------------------*/
+       #left_menu ul ul {margin: 0;padding: 0;}
+       #left_menu ul ul li {float: none;}
+       #left_menu ul ul li a {
+		color: #505551;
+		font-size: 11px;
+		height: 22px;
+		padding: 0px 0px 0px 40px;
+		background: url(../images/left_menu.png) no-repeat 0px -44px;}
+       #left_menu ul ul li a:hover {
+		color: #2c372e;
+		background: url(../images/left_menu.png) no-repeat 0px -44px;}
+	
+       #left_menu ul li.parent ul {display: none;}
+       #left_menu ul li.parentOn ul {display: block;}
+		
+		
+
+/*---------------------------------------------------------------------------------------------------------------------*/		
+/*#container {
+	align:center;
+	margin: 0 auto;
+	width: 1000px;
+	}	
+/*---------------------------------------------------------------------------------------------------------------------*/
+#primary_wrapper{
+	float:right;
+	padding: 25px 40px 0px 23px;
+	width: 837px;
+	background:#fff;}
+	#primary_title {position:relative;width: 100%;padding: 0px 0px 60px 0px;}
+		#primary_edit {float:left;font-size:11px;color:#909090;/*text-valign:bottom;*/}
+		#primary_map {float:right;text-align:right;font-size:11px;color:#adadad;}
+	
+	#primary {
+	text-align: left;
+	padding: 0px 0px 30px 0px;
+	}
+	
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+#footer_wrapper {
+	position:relative;
+	width: 100%;
+	border-top: 1px solid #e5e5e5;}
+	#footer_edit{
+	padding: 15px 0px 30px 0px;
+	float:left;
+	font-size:11px;
+	color:#8a8a8a;}
+	#footer_edit a {color:#646464; text-decoration: none;}
+	#footer_edit a:hover {color:#3e3e3e; text-decoration: none;}
+	#footer_copyright{
+	padding: 15px 0px 50px 0px;
+	float:right;
+	text-align:right;
+	font-size:9px; 
+	color:#a8a8a8;}
+	
+	
+.clear-float {margin: 0px; padding: 0px; clear: both;}	
